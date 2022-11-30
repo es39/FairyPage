@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;     
+  box-sizing: border-box; 
+ }
+
+main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  width: 400px;
+  height: 400px;
+  background-color: beige;
+  /* 정사각형 비율 유지 & 사용자 화면에 맞게 반응형으로 수정 */
+}
+/* 
+.profile {
+
+} */
