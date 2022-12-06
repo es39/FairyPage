@@ -1,6 +1,7 @@
 // 1. img src 속성으로 url add
 // 2. fairy role div append 
 // 3. rendering 
+// 4. hover js 에서 주기
 
 console.log(fairyMembers);
 
@@ -21,6 +22,7 @@ const upperCard = (obj) => {
     avatarImg.alt = 'avatar of ' + obj.membername;
     avatarWrapper.append(avatarImg);
 
+    
     li.append(avatarWrapper, fairyRole);
   return li;
 }
@@ -47,8 +49,8 @@ const lowerCard = (obj) => {
 const upperul = document.querySelector("ul.member_card--upper");
 const lowerul = document.querySelector("ul.member_card--lower");
 
-upperul.append(upperCard(obj));
-lowerul.append(lowerCard(obj));
+// upperul.append(upperCard(fairyMembers));
+// lowerul.append(lowerCard(fairyMembers));
 
 const upperrender = (element) => {
     for (let i = 0; i < 4; i += 1) {
@@ -64,6 +66,5 @@ const lowerrender = (element) => {
     return;
 };
 
-
-render(upperul);
-render(lowerul);
+upperrender(upperul);
+lowerrender(lowerul); 

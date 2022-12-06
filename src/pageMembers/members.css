@@ -23,6 +23,9 @@ ul {
   border: 2px solid rgb(255, 64, 64);
 } */
 
+ul > li {
+  border-radius: 10px;
+}
 .member_team--container {
   width: 700px;
   height: 100px;

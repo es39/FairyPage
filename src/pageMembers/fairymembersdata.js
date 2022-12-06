@@ -1,7 +1,7 @@
 const fairyMembers = [
     {
       id: 1,
-      picture: `https://randomuser.me/api/portraits/men/16.jpg`,
+      picture: `https://randomuser.me/api/portraits/men/20.jpg`,
       membername: '리뷰요정',
       
       englishname: 'JoEunSeon',
@@ -65,7 +65,7 @@ const fairyMembers = [
       },
       {
         id: 5,
-        picture: `https://randomuser.me/api/portraits/men/16.jpg`,
+        picture: `https://randomuser.me/api/portraits/men/18.jpg`,
         membername: '드립요정',
         
         englishname: 'JoEunSun',
@@ -81,7 +81,7 @@ const fairyMembers = [
       },
       {
         id: 6,
-        picture: `https://randomuser.me/api/portraits/men/16.jpg`,
+        picture: `https://randomuser.me/api/portraits/men/18.jpg`,
         membername: '드립요정',
         
         englishname: 'JoEunSun',
@@ -97,7 +97,7 @@ const fairyMembers = [
       },
       {
         id: 7,
-        picture: `https://randomuser.me/api/portraits/men/16.jpg`,
+        picture: `https://randomuser.me/api/portraits/men/18.jpg`,
         membername: '드립요정',
         
         englishname: 'JoEunSun',
@@ -113,7 +113,7 @@ const fairyMembers = [
       },
       {
         id: 8,
-        picture: `https://randomuser.me/api/portraits/men/16.jpg`,
+        picture: `https://randomuser.me/api/portraits/men/18.jpg`,
         membername: '드립요정',
         
         englishname: 'JoEunSun',
