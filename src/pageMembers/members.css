@@ -15,8 +15,8 @@ main {
 
 ul {
   list-style:none;
-  /* display: flex;
-  justify-content: center; */
+  display: flex;
+  justify-content: center;
 }
 
 /* li {
@@ -44,7 +44,8 @@ ul > li {
   border: 2px solid rgb(255, 64, 64);
 }
 
-.member_card1 {
+
+.member_card2 {
   border: 2px solid rgb(255, 64, 64);
   width: calc(100% / 4);
   height: 100%;
@@ -52,27 +53,47 @@ ul > li {
   cursor: pointer;
   position: relative;
   transition: transform 0.5s;
-  /* transform-style: preserve-3d; */
-}
-
-.member_card--upper:hover .member_card1,
-.member_card--upper:focus .member_card1 {
-  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
 .member_card1--front, 
-.member_card1--back {
-  position: absolute;
-  width: 100%;
+.member_card2 {
+  border: 2px solid rgb(255, 64, 64);
+  width: calc(100% / 4);
   height: 100%;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.5s;
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  /* transform-style: preserve-3d; */
 }
 
-.member_card1--front {
+.member_card1--front:hover,
+.member_card1--front:focus,
+.member_card1--back:hover,
+.member_card1--back:focus,
+.member_card2:focus, 
+.member_card2:hover {
+  transform: rotateY(180deg);
+}
+
+li .member_card1--front,
+li .member_card1--back  {
+  position: absolute;
+  width: 100%;
+  height: 100%
+}
+
+li.member_card1--front {
   background: linear-gradient(to left, grey, pink);
   z-index: 2;
 }
-.member_card1--back {
-  background: linear-gradient(to right, grey, pink);
+li.member_card1--back {
+  background-color: linear-gradient(to right, grey, pink);
   transform: rotateY(180deg);
   z-index: 1;
 }
