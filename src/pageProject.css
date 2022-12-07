@@ -7,7 +7,7 @@
     border: 2px solid rgb(68, 68, 68);
 }
 
-.content {
+.project_content {
     max-width: 1350px;
     min-width: 1350px;
     max-height: 848px;
@@ -20,17 +20,17 @@
     border: solid 1px red;
 }
 
-.title{
+.project_title{
     font-size:2rem;
     text-align: center;
 }
 
-.cardArea {
+.project_cardArea {
     display: flex;
     justify-content: center;
 }
 
-.cardArea li{
+.project_cardArea li{
     width: 300px;
     height: 450px;
     margin: 0 15px 0 15px;
@@ -39,33 +39,33 @@
     justify-content: space-between;
     align-items: center;
 }
-.cardAreaImg {
+.project_cardAreaImg {
     position: relative;
     width:280px;
     height:400px;
 }
-.cardAreaImg > img {
+.project_cardAreaImg > img {
     border: 1px solid rgb(54, 54, 54);
     width: 280px;
     height: 400px;
     border-radius: 25px;
     filter: brightness(1);
 }
-.cardAreaImg > span {
+.project_cardAreaImg > span {
     display: none;
 }
-.cardAreaImg > div {
+.project_cardAreaImg > div {
     background-image: url('../projectImg.png');
     background-size: 280px 400px;
     width: 280px;
     height: 400px;
     border-radius: 25px;
 }
-.cardAreaImg:hover > div{
+.project_cardAreaImg:hover > div{
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 46.88%, rgba(0, 0, 0, 0.6) 100%), url('../projectImg.png');
     background-size: 280px 400px;
 }
-.cardAreaImg:hover > span {
+.project_cardAreaImg:hover > span {
     transition: all 3s;
     display: block;
     position: absolute;
@@ -77,11 +77,11 @@
     text-align: center;
 }
 
-.cardArea li>span{
+.project_cardArea li>span{
     font-size: 1rem;
 }
 
-.buttonArea {
+.project_buttonArea {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -110,6 +110,6 @@ button#next {
 button#next:active {
     background: rgb(55, 180, 91);
 }
-.modal{
+.project_modal{
   
 }
