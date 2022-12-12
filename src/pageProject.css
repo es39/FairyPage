@@ -4,7 +4,7 @@
     align-items: center;
     width: 100%;
     height: 100vh;
-    border: 2px solid rgb(68, 68, 68);
+
 }
 
 .project_content {
@@ -87,7 +87,7 @@
     align-items: center;
     width: 280px;
 }
-button {
+.project_buttonArea button {
     appearance: none;
     border: none;
     border-radius: 30px;
@@ -97,19 +97,144 @@ button {
     font-size: 1rem;
 }
 
-button#prev {
+button#project_prev {
     border: 2px solid rgba(208, 208, 208, 1)
 }
-button#prev:active {
+button#project_prev:active {
     background: rgb(218, 218, 218)
 }
-button#next {
+button#project_next {
     color: rgb(255, 255, 255);
     background: rgba(66, 216, 108, 1);
 }
-button#next:active {
+button#project_next:active {
     background: rgb(55, 180, 91);
 }
+
+/* 모달 페이지 구현 스타일 */
 .project_modal{
-  
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.project_modalBox {
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    border: solid 1px red;
+    transform: translateX(-50%);
+    display: flex;
+}
+.project_modalBodyContainer {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    scroll-padding: 0;
+    /* firefox에서 스크롤바 숨기기 */
+    scrollbar-width: none;
+}
+/* IE, Edge, Chrome에서 스크롤바 숨기기 */
+.project_modalBodyContainer::-webkit-scrollbar {
+    display: none;
+}
+.project_modalBody {
+    width: 800px;
+    height: auto;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: flex-start; */
+    margin: 50px 0;
+    /* padding: 10px 0; */
+}
+.project_modalBodyHeader {
+    width: 100%;
+    height: 100px;
+}
+.project_modalBodyContets {
+    margin-top: 50px;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.project_modalContent {
+    width: 800px;
+    height: 500px;
+    margin-bottom: 1px;
+    background-color: black;
+}
+.project_modalButtonBox{
+    /* 버튼 아래로 정렬*/
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 50px;
+    width: 77px;
+    height: 1000px;
+}
+.project_modalButtonBoxS {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 50px;
+    height: 80px;
+    color : white;
+    
+}
+.project_modalButtonBox button {
+    display: flex;
+    appearance: none;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background: white;
+    font-size: 1rem;
+}
+
+.project_modalBodyHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.project_modalProjectName{
+    padding: 10px 0;
+    font-size: 1rem;
+}
+.project_modalProjectButtonBox{
+    display: flex;
+    align-items: center;
+    
+}
+
+.project_modalProjectButtonBox button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    appearance: none;
+    border: none;
+    border-radius: 50px;
+    background: #000000;
+}
+.project_modalProjectButton > img {
+    width: 31px;
+    height: 31px;
+    margin: 0 10px 0 15px;
+}
+.project_modalProjectButton > span {
+    color: white;
+    font-size: 0.9rem;
 }
