@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;     
+  box-sizing: border-box; 
+ }
+
+main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.member_modal {
+  width: 400px;
+  height: 400px;
+  background-color: beige;
+  /* 정사각형 비율 유지 & 사용자 화면에 맞게 반응형으로 수정 */
+}
+
+.member_profile {
+  display: flex;
+  padding: 10px;
+  margin: 20px;
+  width: 360px;
+  /*부모 요소와 가로길이 맞추기*/
+  height: 200px;
+  border: 2px solid black
+}
+
+.member_avatar--wrapper{
+  padding: 5px;
+  margin: 3px;
+  width: 160px;
+  /*부모 요소와 가로길이 맞추기*/
+  height:  170px;
+  border: 2px solid black
+}
+
+.member_profile--brief{
+  padding: 5px;
+  margin: 3px;
+  width: 160px;
+  /*부모 요소와 가로길이 맞추기*/
+  height:  170px;
+  border: 2px solid black
+}
+
+.member_profile--introduce{
+  padding: 5px;
+  margin: 20px ;
+  width: 360px;
+  /*부모 요소와 가로길이 맞추기*/
+  height:  100px;
+  border: 2px solid black
+}
+
+.member_icon--wrapper{
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  margin: 20px;
+  width: 360px;
+  /*부모 요소와 가로길이 맞추기*/
+  height:  35px;
+  border: 2px solid black
+}
+
+.member_link--icon1{
+  width: 20px;
+  /*부모 요소와 가로길이 맞추기*/
+  height:  20px;
+  border: 2px solid black
+}
+.member_link--icon2{
+  margin: 0 0 0 2px;
+  width: 20px;
+  /*부모 요소와 가로길이 맞추기*/
+  height:  20px;
+  border: 2px solid black
+}
+.member_link--icon3{
+  margin: 0 0 0 2px;
+  width: 20px;
+  /*부모 요소와 가로길이 맞추기*/
+  height:  20px;
+  border: 2px solid black
+}

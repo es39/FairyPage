@@ -1,19 +1,120 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- This style is global style -->
     <link rel="stylesheet" href="common.css">
+    
+    <!-- Load the pageMain style -->
+    <link rel="stylesheet" href="css.css">    
+    
+    <!-- Load the pageMember style -->
+    <link rel="stylesheet" href="./pageMembers/members.css">
+    <link rel="stylesheet" href="./pageMembers/modal.css">
+    
+    <!-- Load the pageProject style -->
     <link rel="stylesheet" href="pageProject.css">
+    
     <title>FairyPage</title>
 </head>
-<body>
-    <section id="main">
 
+<body>
+    <section id="main"> <!-- 회의안 2 구조 -->
+        <div class="main_top"> 
+            <div class="main_logo"></div>
+            <div class="main_nav">
+                <div>멤버소개</div>
+                <div>프로젝트</div>
+            </div>
+        </div>
+        <div class="main_content">
+            <div class="main_visual">
+                <div>
+                    <span>마</span>
+                    <span>우</span>
+                    <span>스</span>
+                    <span>를</span>
+                    <span>&nbsp;</span>
+                    <span>올</span>
+                    <span>려</span>
+                    <span>주</span>
+                    <span>세</span>
+                    <span>요</span>
+                </div>
+                <div class="main_pesonalCircle-container">
+                    <div class="main_circle-box">
+                        <div class="main_hoverbox main_hoverbox-key1"><div class="main_sang-kyo main_circle"></div></div>
+                        <div class="main_hoverbox main_hoverbox-key2"><div class="main_eun-su main_circle"></div></div>
+                        <div class="main_hoverbox main_hoverbox-key3"><div class="main_eun-seon main_circle"></div></div>
+                        <div class="main_hoverbox main_hoverbox-key4"><div class="main_jae-hoon main_circle"></div></div>
+                        <div class="main_hoverbox main_hoverbox-key5"><div class="main_seung-mi main_circle"></div></div>
+                        <div class="main_hoverbox main_hoverbox-key6"><div class="main_chang-yong main_circle"></div></div>
+                        <div class="main_hoverbox main_hoverbox-key7"><div class="main_song-min main_circle"></div></div>
+                        <div class="main_hoverbox main_hoverbox-key8"><div class="main_gyu-ri main_circle"></div></div>
+                        <div class="main_keyword"><p>Coding Is My Life</p></div>
+                    </div>
+                </div>
+            </div>
+        </div> 
     </section>
     <section id="member">
+        <div class="member_team--container">
+            <div class="member_team--title"></div>
+            <div class="member_team--introduce"></div>
+        </div>
 
+        <div class="member_member--card--container">
+            <ul class="member_card--upper">
+                <!-- <li class="member_card1">
+                    <div class="member_card1--front">
+                        <div class="member_card--avatar--wrapper">
+                            <img class="member_card--avatar">
+                        </div>
+                        <div class="member_fairy--role"></div>
+                    </div>
+                    <div class="member_card1--back">
+                        <h3></h3>
+                        <div class="member_card--brief"></div>
+                        <div class="member_role--icon"></div>
+                    </div>
+                </li> -->
+            </ul>
+
+            <ul class="member_card--lower">
+                <!-- <li class="member_card2">
+                    <div class="member_card2--front">
+                        <div class="member_card--avatar--wrapper">
+                            <img class="member_card--avatar">
+                        </div>
+                        <div class="member_fairy--role"></div>
+                    </div>
+                    <div class="member_card2--back">
+                        <h3></h3>
+                        <div class="member_card--brief"></div>
+                        <div class="member_role--icon"></div>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+
+        <div class="member_modal">
+            <div class="member_profile">
+                <div class="member_avatar--wrapper">
+                    <img class="member_avatar--img">
+                </div>
+                <div class="member_profile--brief"></div>
+            </div>
+            <div class="member_profile--introduce"></div>
+            <div class="member_icon--wrapper">
+                <img class="member_link--icon1">
+                <img class="member_link--icon2">
+                <img class="member_link--icon3">
+            </div>
+        </div>
     </section>
     <section id="project">
         <div class="project_modal">
@@ -95,5 +196,8 @@
             </div> 
         </div>
     </section>
-</body>
+    </body>
+<script src="./pageMembers/fairymembersdata.js"></script>
+<script src="./pageMembers/members.js"></script>
+
 </html>
