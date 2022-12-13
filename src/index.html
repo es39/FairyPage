@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css.css">
+
+    <!-- This style is global style -->
     <link rel="stylesheet" href="common.css">
+    
+    <!-- Load the pageMain style -->
+    <link rel="stylesheet" href="css.css">    
+    
+    <!-- Load the pageMember style -->
+    <link rel="stylesheet" href="./pageMembers/members.css">
+    <link rel="stylesheet" href="./pageMembers/modal.css">
+
     <title>FairyPage</title>
 </head>
+
 <body>
     <section id="main"> <!-- 회의안 2 구조 -->
         <div class="main_top"> 
@@ -48,10 +59,65 @@
         </div> 
     </section>
     <section id="member">
+        <div class="member_team--container">
+            <div class="member_team--title"></div>
+            <div class="member_team--introduce"></div>
+        </div>
 
+        <div class="member_member--card--container">
+            <ul class="member_card--upper">
+                <!-- <li class="member_card1">
+                    <div class="member_card1--front">
+                        <div class="member_card--avatar--wrapper">
+                            <img class="member_card--avatar">
+                        </div>
+                        <div class="member_fairy--role"></div>
+                    </div>
+                    <div class="member_card1--back">
+                        <h3></h3>
+                        <div class="member_card--brief"></div>
+                        <div class="member_role--icon"></div>
+                    </div>
+                </li> -->
+            </ul>
+
+            <ul class="member_card--lower">
+                <!-- <li class="member_card2">
+                    <div class="member_card2--front">
+                        <div class="member_card--avatar--wrapper">
+                            <img class="member_card--avatar">
+                        </div>
+                        <div class="member_fairy--role"></div>
+                    </div>
+                    <div class="member_card2--back">
+                        <h3></h3>
+                        <div class="member_card--brief"></div>
+                        <div class="member_role--icon"></div>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+
+        <div class="member_modal">
+            <div class="member_profile">
+                <div class="member_avatar--wrapper">
+                    <img class="member_avatar--img">
+                </div>
+                <div class="member_profile--brief"></div>
+            </div>
+            <div class="member_profile--introduce"></div>
+            <div class="member_icon--wrapper">
+                <img class="member_link--icon1">
+                <img class="member_link--icon2">
+                <img class="member_link--icon3">
+            </div>
+        </div>
     </section>
     <section id="project">
-        
+
     </section>
-</body>
+    </body>
+<script src="./pageMembers/fairymembersdata.js"></script>
+<script src="./pageMembers/members.js"></script>
+
 </html>
