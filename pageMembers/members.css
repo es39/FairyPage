@@ -26,15 +26,24 @@ ul {
 ul > li {
   border-radius: 10px;
 }
+
+#member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .member_team--container {
-  width: 700px;
-  height: 100px;
+  max-width: 1350px;
+  min-width: 1350px;
+  height: 300px;
   border: 2px solid #191de3;
 }
 
 .member_member--card--container {
-  width: 700px;
-  height: 360px;
+  max-width: 1350px;
+  min-width: 1350px;
+  height: 550px;
   border: 2px solid rgb(255, 64, 64);
   padding: 0.5em;
 }
