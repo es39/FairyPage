@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css?family=Jua:400');
+
+
+
+#main{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main_top{
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  /* background-color: #777; */
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+}
+
+.main_logo{
+  width: 70px;
+  height: 70px;
+  border-radius: 30%;
+  margin-top: 5px;
+  margin-left: 5px;
+  background-image: url(/src/img/96c5d003503833f5.png);
+  background-size: cover;
+}
+
+.main_nav{
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
+  line-height: 80px;
+  font-family: sans-serif;
+  color:#333;
+}
+.main_content{
+  /* background-color: rgb(219, 139, 139); */
+  width: 100%;
+  height:1080px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_visual{
+  width: 1000px;
+  height: 500px;
+  /* background-color: rgb(160, 139, 139); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main_pesonalCircle-container{
+  width:900px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+}
+.main_circle-box{
+  display: flex;
+  justify-content: space-around;
+}
+.main_circle{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: 1.8s;
+}
+
+.main_hoverbox:hover > .main_circle{
+  transform: translateY(150px) scaleY(2) rotate(-45deg);
+  border-radius: 50% 0% 50% 50%;
+  cursor: pointer;
+  opacity: 0;
+}
+.main_keyword{
+  position:absolute;
+  top:50%;
+  font-size: 120px;
+  font-weight: 900;
+  font-family: sans-serif;
+  color:#fff;
+  opacity: 0;
+  
+}
+/* member hover */
+.main_hoverbox{
+  width:300px;
+  height:300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1.8s;
+}
+
+/* member circle */
+.main_pesonalCircle-container{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.main_sang-kyo{
+  background-color: #BEEBFD;
+}
+.main_hoverbox-key1:hover ~ .main_keyword{
+  color: #BEEBFD;
+  transition: 1.8s;
+  opacity: 1;
+}
+
+.main_eun-su{
+  background-color: #CFC3B5;
+}
+.main_hoverbox-key2:hover ~ .main_keyword{
+  color: #CFC3B5;
+  transition: 1s;
+  opacity: 1;
+}
+
+.main_eun-seon{
+  background-color: #FC7399;
+}
+.main_hoverbox-key3:hover ~ .main_keyword{
+  color: #FC7399;
+  transition: 1.5s;
+  opacity: 1;
+}
+
+.main_jae-hoon{
+  background-color: #EE4A5D;
+}
+.main_hoverbox-key4:hover ~ .main_keyword{
+  color: #EE4A5D;
+  transition: 1.5s;
+  opacity: 1;
+}
+
+.main_seung-mi{
+  background-color: #D3C0D3;
+}
+.main_hoverbox-key5:hover ~ .main_keyword{
+  color: #D3C0D3;
+  transition: 1.5s;
+  opacity: 1;
+}
+
+.main_chang-yong{
+  background-color: #9EC5D5;
+}
+.main_hoverbox-key6:hover ~ .main_keyword{
+  color: #9EC5D5;
+  transition: 1.5s;
+  opacity: 1;
+}
+
+.main_song-min{
+  background-color: #F7E7B1;
+}
+.main_hoverbox-key7:hover ~ .main_keyword{
+  color: #F7E7B1;
+  transition: 1.5s;
+  opacity: 1;
+}
+
+.main_gyu-ri{
+  background-color:  #AFCB3D;
+}
+.main_hoverbox-key8:hover ~ .main_keyword{
+  color:  #AFCB3D;
+  transition: 1.5s;
+  opacity: 1;
+}
+
