@@ -56,16 +56,16 @@ main {
   border: 2px solid black
 }
 
-.member_icon--wrapper{
+/* .member_icon--wrapper{
   display: flex;
   justify-content: center;
   padding: 5px;
   margin: 20px;
   width: 360px;
   /*부모 요소와 가로길이 맞추기*/
-  height:  35px;
-  border: 2px solid black
-}
+  /* height:  35px;
+  border: 2px solid black */
+/*} */
 
 .member_link--icon1{
   width: 20px;
