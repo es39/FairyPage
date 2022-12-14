@@ -1,22 +1,10 @@
 /*
-
-------메인 기능------
-
-- 프로젝트 카드 더미데이터 만들고(6개), 데이터 렌더링하는 함수 작성
-- 프로젝트 카드 클릭했을 때 모달 표시
-- 모달 영역 바깥쪽 클릭 시 모달 표시 해제
-
-- 카드섹션 슬라이드(prev,next 버튼 눌렀을 때 => 무한슬라이드!!ㅇ0ㅇ) ㅇ0ㅇ!! ㅇ0ㅇ!! ㄴㅇㄱ ㅎ0ㅎ
-- 모달 on/off,  
-
-
-
-- 카드넘어가는 거
-    - startIndex ~ startIndex+3번째까지 보이고,
-    - next 클릭했을 때 startIndex += 2
-    - prev 클릭했을 때 startIndex -= 2
-    - 무한.. 슬라이..드.....
-    - 넘어가는 애니매이션 스무스하게
+슬라이드
+- startIndex ~ startIndex+3번째까지 보이고,
+- next 클릭했을 때 startIndex += 2
+- prev 클릭했을 때 startIndex -= 2
+- 무한.. 슬라이..드.....
+- 넘어가는 애니매이션 스무스하게
 
 
 ------모달창 기능------
@@ -48,3 +36,74 @@
         - 새 페이지 
 */
 
+/*
++====================+
+| 프로젝트 카드 영역 생성 |
++====================+
+*/
+// 프로젝트 더미 데이터 호출
+// const dataProjects = require('./pageProjectData.json')
+// import dataProjects from './pageProjectData.json';
+
+// 카드 컴포넌트 렌더링 함수
+// className = '이름' 은 한개만 가능. (있던 클래스명을 변경할 때 쓰일 수 있다.)
+// classList.add('이름','이름2') 은 여러개 가능
+const renderProjectCard = data => {
+    // 최상위 부모 요소 선언
+    const elCard = document.createElement('li');
+    elCard.id = `ProjectCard${data.id}`
+    // 프로젝트 카드 = 이미지 영역 + 이름 영역
+    const elImgArea = document.createElement('div');
+    elImgArea.className = 'project_cardAreaImg';
+    const elName = document.createElement('span');
+    elName.textContent = data.name
+    
+    // 이미지 영역 = 이미지 + 이미지 내부 프로젝트 설명
+    const elImg = document.createElement('div');
+    const elDescribe = document.createElement('span');
+
+    // 이미지 표시 
+    // ToDo 호버했을 때 이미지 검게 처리
+    elImg.style.backgroundImage = `url('${data.image}')`
+    // 설명 표시
+    elDescribe.textContent = data.describe
+    // 이미지 영역 조립
+    elImgArea.append(elImg, elDescribe);
+    
+    // 프로젝트 카드 조립
+    elCard.append(elImgArea, elName);
+    
+    return elCard
+};
+
+// 2. ul.project_cardArea 요소에 컴포넌트를 배열 데이터만큼 반복 렌더링
+const elProjectCardArea = document.querySelector('.project_cardArea')
+// 아래 코드를 반복하게 해야 함
+dataProjects.map(data => {
+    const elProjectCard = renderProjectCard(data)
+    elProjectCardArea.append(elProjectCard)
+})
+
+
+
+/*
++=============+
+| 모달 토글 기능 |
++=============+
+*/
+// ToDo 모달창 이외 영역 클릭 시 모달창 close
+// * 강조되고 반복되는 코드는 프로그래머를 불안하게 합니다. 으악 ㅇ0ㅇ!
+// 모달 토글
+
+//모달 div 를 불러온다
+const modal = document.querySelector('.project_modal')
+const cardImg = document.querySelector('.project_cardArea')
+
+const toggleModal = () => {
+    modal.classList.toggle('hidden');
+}
+
+cardImg.addEventListener ('click', (e) => {
+    e.preventDefault();
+    toggleModal()
+})
