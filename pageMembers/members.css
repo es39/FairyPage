@@ -14,14 +14,16 @@
 
 .member-card-upper {
   background-color: transparent;
-  width: 300px;
-  height: 300px;
+  width: 800px;
+  height: 200px;
   perspective: 1000px;
+  display: flex;
+  
 }
 
 .member-card-inner {
   position: relative;
-  width: 100%;
+  width: calc(100% / 4);
   height: 100%;
   text-align: center;
   transition: transform 0.6s;
@@ -35,8 +37,8 @@
     outline: 0;
 }
 
-.member-card-upper:hover .member-card-inner,
-.member-card-upper:focus .member-card-inner{
+.member-card-inner:hover,
+.member-card-inner:focus {
   transform: rotateY(180deg);
 }
 
@@ -48,7 +50,7 @@
 }
 
 .member-card-front {
-  background: linear-gradient(to left, #4364f7, #6fb1fc);
+  background: linear-gradient(to left, #a8b7f6, #6fb1fc);
   color: black;
   z-index: 2;
   display: flex;
@@ -78,8 +80,15 @@ img {
   width: 100px;
 }
 
+.member_Englishname {
+  text-align: left;
+}
+
+
 .member_icon--wrapper {
   display: flex;
+  width: 70%;
+  justify-content: space-around;
 }
 
 

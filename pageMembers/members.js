@@ -7,29 +7,29 @@
 
 
 
-// const upperCardFront= (obj) => {
-//   const frontList = document.createElement("div");
-//   frontList.className = "member_card1--front";
+const upperCardFront= (obj) => {
+  const frontList = document.createElement("div");
+  frontList.className = "member_card1--front";
 
-//   // 앞면 미모티콘 className
-//   const avatarWrapper = document.createElement("div");
-//   avatarWrapper.className = "member_card--avatar--wrapper";
+  // 앞면 미모티콘 className
+  const avatarWrapper = document.createElement("div");
+  avatarWrapper.className = "member_card--avatar--wrapper";
 
-//   // 앞면 00요정 className
-//   const fairyRole = document.createElement("div");
-//   fairyRole.className = "member_fairy--role"; 
-//   fairyRole.textContent = obj.membername;
+  // 앞면 00요정 className
+  const fairyRole = document.createElement("div");
+  fairyRole.className = "member_fairy--role"; 
+  fairyRole.textContent = obj.membername;
 
-//   // 미모티콘 붙이기
-//   const avatarImg = document.createElement('img');
-//   avatarImg.src = obj.picture;
-//   avatarImg.alt = 'avatar of ' + obj.membername;
-//   avatarWrapper.append(avatarImg);
+  // 미모티콘 붙이기
+  const avatarImg = document.createElement('img');
+  avatarImg.src = obj.picture;
+  avatarImg.alt = 'avatar of ' + obj.membername;
+  avatarWrapper.append(avatarImg);
 
-//  frontList.append(avatarWrapper, fairyRole);
-//  return frontList;
+ frontList.append(avatarWrapper, fairyRole);
+ return frontList;
 
-// }
+}
 
 // const upperCardBack = (obj) => {
 // // 뒷면 시작
