@@ -56,32 +56,42 @@ const renderProjectCard = data => {
     const elImgArea = document.createElement('div');
     elImgArea.className = 'project_cardAreaImg';
     const elName = document.createElement('span');
-    elName.textContent = data.name
+    elName.textContent = data.name;
     
     // 이미지 영역 = 이미지 + 이미지 내부 프로젝트 설명
     const elImg = document.createElement('div');
     const elDescribe = document.createElement('span');
 
-    // 이미지 표시 
-    // ToDo 호버했을 때 이미지 검게 처리
-    elImg.style.backgroundImage = `url('${data.image}')`
+    // 이미지 표시
+    elImg.style.backgroundImage = `url('${data.image}')`;
+    elImg.style.backgroundSize = '280px 400px';
     // 설명 표시
-    elDescribe.textContent = data.describe
+    elDescribe.textContent = data.describe;
     // 이미지 영역 조립
     elImgArea.append(elImg, elDescribe);
-    
+
+    // 이미지 영역에 마우스 오버 시 검게 처리
+    elImgArea.addEventListener('mouseover', () => {
+        elImg.style.background = `linear-gradient(180deg, rgba(0, 0, 0, 0) 46.88%, rgba(0, 0, 0, 0.6) 100%), url('${data.image}')`;
+        elImg.style.backgroundSize = '280px 400px';
+    })
+    elImgArea.addEventListener('mouseout', () => {
+        elImg.style.backgroundImage = `url('${data.image}')`;
+        elImg.style.backgroundSize = '280px 400px';
+    })
+
     // 프로젝트 카드 조립
     elCard.append(elImgArea, elName);
     
-    return elCard
+    return elCard;
 };
 
 // 2. ul.project_cardArea 요소에 컴포넌트를 배열 데이터만큼 반복 렌더링
-const elProjectCardArea = document.querySelector('.project_cardArea')
+const elProjectCardArea = document.querySelector('.project_cardArea');
 // 아래 코드를 반복하게 해야 함
 dataProjects.map(data => {
-    const elProjectCard = renderProjectCard(data)
-    elProjectCardArea.append(elProjectCard)
+    const elProjectCard = renderProjectCard(data);
+    elProjectCardArea.append(elProjectCard);
 })
 
 
@@ -91,19 +101,128 @@ dataProjects.map(data => {
 | 모달 토글 기능 |
 +=============+
 */
-// ToDo 모달창 이외 영역 클릭 시 모달창 close
-// * 강조되고 반복되는 코드는 프로그래머를 불안하게 합니다. 으악 ㅇ0ㅇ!
-// 모달 토글
-
 //모달 div 를 불러온다
-const modal = document.querySelector('.project_modal')
-const cardImg = document.querySelector('.project_cardArea')
+const cardImg = document.querySelectorAll('.project_cardAreaImg');
+const modal = document.querySelector('.project_modal'); // ; 안넣으면 뒤에[] 가 오는 문법이 있어서 마무리 해줘야 함
 
-const toggleModal = () => {
-    modal.classList.toggle('hidden');
+//카드 이미지 클릭 시 모달창 뜨는
+//toggle === 있으면 빼고 없으면 넣는 메서드
+//event.preventDefault() submit 같은 새로고침 발생하는 이벤트를 막기위해 쓰는 메서드
+[...cardImg].map(el => {
+    el.addEventListener('click',(e) => {
+        modal.classList.remove('hidden');
+        renderModalBox(dataProjects[0])
+    });
+});
+//모달 밖을 클릭하면 닫는 
+window.addEventListener ('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.add('hidden');
+        initModalBox();
+    };
+});
+
+/*
++=================+
+|  모달 렌더링 기능   |
++=================+
+*/
+
+/*
+{
+    id: "1",
+    image: "../img/projectImg.png",
+    name: "card 1",
+    describe: "첫번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
+    modal: {
+        github: "",
+        demo: "",
+        image: []
+    }
+}
+*/
+// ToDo 모달박스 자체를 그리도록 리팩토링
+const renderModalBox = data => {
+    const project_modalBox = document.querySelector('.project_modalBox');
+    project_modalBox.id = `project_modal${data.id}`;
+    
+    // 이름 prepend
+    const project_modalBodyHeader = document.querySelector('.project_modalBodyHeader');
+    const project_modalProjectName = document.createElement('div');
+    project_modalProjectName.className = 'project_modalProjectName'
+    project_modalProjectName.textContent = data.name;
+    project_modalBodyHeader.prepend(project_modalProjectName);
+    
+    
+    
+    // 모달 컨텐츠 이미지 ... ㅇ0ㅇ
+    const project_modalBodyContents = document.querySelector('.project_modalBodyContents');
+    data.modal.image.map(img =>{
+        const project_modalContent = document.createElement('img');
+        project_modalContent.className = 'project_modalContent'
+        project_modalContent.src = img
+        project_modalBodyContents.append(project_modalContent)
+    })
+
+    // GitHub 버튼 링크 연결
+    const gitHubBtn = document.querySelector('#project_github');
+    gitHubBtn.addEventListener('click', () => {
+        window.open(data.modal.github);
+    });
+
+    // 데모 버튼 링크 연결
+    const demoBtn = document.querySelector('#project_demo');
+    demoBtn.addEventListener('click', () => {
+        window.open(data.modal.demo)
+    })
+}
+const initModalBox = () => {
+    // id 삭제
+    const project_modalBox = document.querySelector('.project_modalBox');
+    project_modalBox.id = '';
+    
+    // 이름 영역 삭제
+    const project_modalProjectName = document.querySelector('.project_modalProjectName');
+    project_modalProjectName.remove()
+    
+    
+    
+    // 모달 컨텐츠 이미지 삭제
+    const project_modalBodyContents = document.querySelector('.project_modalBodyContents');
+    // while (project_modalBodyContents.firstChild) {
+    //     project_modalBodyContents.remove()
+    // }
+
+    // GitHub 버튼 링크 연결 삭제
+    function replaceCallback() {} //모달이 이벤트 리스너 익명함수를 통해 열리기 때문에 
+    const gitHubBtn = document.querySelector('#project_github');
+    gitHubBtn.addEventListener('click', replaceCallback);   //새로운 함수를 만들어 덮어씌우게 인자로 넣어줌
+    gitHubBtn.removeEventListener('click', replaceCallback);
+
+    // 데모 버튼 링크 연결 삭제
+    const demoBtn = document.querySelector('#project_demo');
+    demoBtn.addEventListener('click', replaceCallback);
+    demoBtn.removeEventListener('click', replaceCallback);
 }
 
-cardImg.addEventListener ('click', (e) => {
-    e.preventDefault();
-    toggleModal()
-})
+
+/*
+커밋을 열심히 하자
+
+12.12
+js 파일에 넣어야 할 기능들 To Do List 만들기
+
+12.14
+변수명 짓기
+데이터 더미 json 파일을 js 파일로 바꾸고 스크립트로 불러옴
+모달 창 open
+
+12.15
+modalButton open/close 기능
+projectCard hover 기능
+projectCard마다 modalPageContent넣기
+
+12.
+각 projectCard 마다 modalPageContent 넣기 
+
+*/
