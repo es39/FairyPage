@@ -4,10 +4,11 @@ const dataProjects = [
         image: "../img/projectImg.png",
         name: "card 1",
         describe: "첫번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
-        bodyImage: [
-            "../pageProject/projectImage/1/sample.png",
-            "../pageProject/projectImage/1/sample1.png"
-        ]
+        modal: {
+            github: "",
+            demo: "",
+            image: []
+        }
     },
     {
         id: "2",

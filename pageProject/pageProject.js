@@ -199,11 +199,10 @@ const initModalBox = () => {
     gitHubBtn.addEventListener('click', replaceCallback);   //새로운 함수를 만들어 덮어씌우게 인자로 넣어줌
     gitHubBtn.removeEventListener('click', replaceCallback);
 
-    // 데모 버튼 링크 연결 삭제
-    const demoBtn = document.querySelector('#project_demo');
+    // 데모 버튼 링크 연결                   uerySelector('#project_demo');
     demoBtn.addEventListener('click', replaceCallback);
     demoBtn.removeEventListener('click', replaceCallback);
-}
+} 
 
 
 /*
@@ -218,11 +217,10 @@ js 파일에 넣어야 할 기능들 To Do List 만들기
 모달 창 open
 
 12.15
-modalButton open/close 기능
-projectCard hover 기능
-projectCard마다 modalPageContent넣기
+feat: Can open/close modal using by 'modalButton'
+feat: Show project's describe when mouse over the 'projectCard'
 
-12.
+12.20
 각 projectCard 마다 modalPageContent 넣기 
 
 */
