@@ -111,7 +111,7 @@ const modal = document.querySelector('.project_modal'); // ; 안넣으면 뒤에
 [...cardImg].map(el => {
     el.addEventListener('click',(e) => {
         modal.classList.remove('hidden');
-        renderModalBox(dataProjects[0])
+        renderModalBox(dataProjects[0]);
     });
 });
 //모달 밖을 클릭하면 닫는 
@@ -127,22 +127,52 @@ window.addEventListener ('click', (e) => {
 |  모달 렌더링 기능   |
 +=================+
 */
+//큰박스
+const renderModalBox = data => { 
+    const project_modalBox = document.querySelector('.project_modalBox');
+    //모달 바디 컨테이너
+    const project_modalBodyContainer = document.createElement('div')
+    project_modalBodyContainer.className = 'project_modalBodyContainer'
+    //모달 버튼박스
+    const project_modalButtonBox = document.createElement('div')
+    project_modalButtonBox.className = 'project_modalButtonBox'
 
-/*
-{
-    id: "1",
-    image: "../img/projectImg.png",
-    name: "card 1",
-    describe: "첫번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
-    modal: {
-        github: "",
-        demo: "",
-        image: []
+    //모달 바디
+    const project_modalBody = document.createElement('div')
+    project_modalBody.className = 'project_modalBody'
+    //모달 바디해더 렌더링
+    const project_modalBodyHeader = renderModalHeader(data);
+    // project_modalBodyHeader.className = 'project_modalBodyHeader'
+    //모달 버튼박스 컨테이너
+    const project_modalButtonBoxContainer = document.createElement('div')
+    project_modalButtonBoxContainer.className = 'project_modalButtonBoxContainer'
+    //모달 버튼,text
+    const project_modalButton = document.createElement('button')
+    project_modalButton.className = 'project_modalButton'
+    project_modalButton.id = 'project_modalCopy'
+    const project_modalButtonText = document.createElement('span')
+    project_modalButtonText.textContent = '복사'
+
+    // 모달 본문 영역 렌더링
+    const content = renderModalBodyContents(data.modal.image);
+
+    //모달박스에 넣기
+    project_modalBox.append(project_modalBodyContainer,project_modalButtonBox);
+    project_modalBody.append(project_modalBodyHeader, content);
+    project_modalBodyContainer.append(project_modalBody)
+    
+    project_modalButtonBox.append(project_modalButtonBoxContainer)
+    project_modalButtonBoxContainer.append(project_modalButton,project_modalButtonText);
+}
+
+const initModalBox = () => {
+    const project_modalBox = document.querySelector('.project_modalBox');
+    while (project_modalBox.firstChild) {
+        project_modalBox.firstChild.remove();
     }
 }
-*/
-// ToDo 모달박스 자체를 그리도록 리팩토링
-const renderModalBox = data => {
+
+const renderModalBoxExample = data => {
     const project_modalBox = document.querySelector('.project_modalBox');
     project_modalBox.id = `project_modal${data.id}`;
     
@@ -152,17 +182,6 @@ const renderModalBox = data => {
     project_modalProjectName.className = 'project_modalProjectName'
     project_modalProjectName.textContent = data.name;
     project_modalBodyHeader.prepend(project_modalProjectName);
-    
-    
-    
-    // 모달 컨텐츠 이미지 ... ㅇ0ㅇ
-    const project_modalBodyContents = document.querySelector('.project_modalBodyContents');
-    data.modal.image.map(img =>{
-        const project_modalContent = document.createElement('img');
-        project_modalContent.className = 'project_modalContent'
-        project_modalContent.src = img
-        project_modalBodyContents.append(project_modalContent)
-    })
 
     // GitHub 버튼 링크 연결
     const gitHubBtn = document.querySelector('#project_github');
@@ -176,34 +195,83 @@ const renderModalBox = data => {
         window.open(data.modal.demo)
     })
 }
-const initModalBox = () => {
-    // id 삭제
-    const project_modalBox = document.querySelector('.project_modalBox');
-    project_modalBox.id = '';
-    
-    // 이름 영역 삭제
-    const project_modalProjectName = document.querySelector('.project_modalProjectName');
-    project_modalProjectName.remove()
-    
-    
-    
-    // 모달 컨텐츠 이미지 삭제
-    const project_modalBodyContents = document.querySelector('.project_modalBodyContents');
-    // while (project_modalBodyContents.firstChild) {
-    //     project_modalBodyContents.remove()
-    // }
 
-    // GitHub 버튼 링크 연결 삭제
-    function replaceCallback() {} //모달이 이벤트 리스너 익명함수를 통해 열리기 때문에 
-    const gitHubBtn = document.querySelector('#project_github');
-    gitHubBtn.addEventListener('click', replaceCallback);   //새로운 함수를 만들어 덮어씌우게 인자로 넣어줌
-    gitHubBtn.removeEventListener('click', replaceCallback);
+const renderModalHeader = data => {
+    // 모달 프로젝트 헤더영역
+    const project_modalBodyHeader = document.createElement('div');
+    project_modalBodyHeader.className = 'project_modalBodyHeader';
 
-    // 데모 버튼 링크 연결                   uerySelector('#project_demo');
-    demoBtn.addEventListener('click', replaceCallback);
-    demoBtn.removeEventListener('click', replaceCallback);
-} 
+    // 모달 프로젝트 헤더 제목
+    const project_modalProjectName = document.createElement('div');
+    project_modalProjectName.className = 'project_modalProjectName';
+    project_modalProjectName.textContent = data.name;
+    
+    // 모달 프로젝트 헤더 링크버튼 영역
+    const project_modalProjectButtonBox = document.createElement('div');
+    project_modalProjectButtonBox.className = 'project_modalProjectButtonBox';    
+    
+    // 모달 프로젝트 헤더 링크버튼 - 깃허브
+    const project_modalProjectGitHubButton = document.createElement('button');
+    project_modalProjectGitHubButton.className = 'project_modalProjectButton'; 
+    project_modalProjectGitHubButton.id = 'project_github';
+    const project_modalProjectGitHubButton_img = document.createElement('img');
+    project_modalProjectGitHubButton_img.src = './img/project_github.png';
+    const project_modalProjectGitHubButton_span = document.createElement('span');
+    project_modalProjectGitHubButton_span.textContent = 'View Code';
 
+    // 모달 프로젝트 헤더 링크버튼 - 데모사이트
+    const project_modalProjectDemoButton = document.createElement('button');
+    project_modalProjectDemoButton.className = 'project_modalProjectButton';
+    project_modalProjectDemoButton.id = 'project_demo';
+    const project_modalProjectDemoHubButton_img = document.createElement('img');
+    project_modalProjectDemoHubButton_img.src = './img/project_to.png';
+    const project_modalProjectDemoHubButton_span = document.createElement('span');
+    project_modalProjectDemoHubButton_span.textContent = 'View Site';
+
+    // 모달 프로젝트 헤더에 제목, 버튼 뿌려주기
+    project_modalBodyHeader.append(project_modalProjectName, project_modalProjectButtonBox);
+    project_modalProjectButtonBox.append(project_modalProjectGitHubButton, project_modalProjectDemoButton);
+    project_modalProjectGitHubButton.append(project_modalProjectGitHubButton_img, project_modalProjectGitHubButton_span);
+    project_modalProjectDemoButton.append(project_modalProjectDemoHubButton_img, project_modalProjectDemoHubButton_span);
+    
+
+    return project_modalBodyHeader;
+}
+
+
+const renderModalBodyContents = modalImages => {
+    // 본문 영역 생성
+    const project_modalBodyContents = document.createElement('div');
+    project_modalBodyContents.className = 'project_modalBodyContents';
+    
+    // 이미지들을 저장된 순서대로 렌더링
+    modalImages.map(img => {
+        // 이미지 영역 생성
+        const project_modalContent = document.createElement('img');
+        project_modalContent.className = 'project_modalContent';
+        project_modalContent.src = img;
+
+        // 본문 영역에 이미지 영역 붙이기
+        project_modalBodyContents.append(project_modalContent);
+    });
+
+    // 생성된 전체 영역 반환
+    return project_modalBodyContents;
+}
+
+
+// 난이도: 상
+// TODO 슬라이드 위치에 따라 카드 4개씩 랜더링
+// 예를 들어 초기 상태에서는 슬라이드 위치가 0, 카드는 0~3번 인덱스까지 렌더링
+// 다음 버튼 클릭 시 슬라이드 위치는 +-3, 카드는 3~6번 인덱스까지 렌더링
+
+// 난이도: 중
+// ToDo 모달 클릭 시 데이터의 id로 주소가 들어가게끔 구현
+// ToDo 복사 버튼 클릭 시 위 주소를 복사
+// ToDo 복사됐을 때 '복사되었습니다'라고 토스트 메시지 표시
+
+// 난이도: 하
+// ToDo 깃헙, 데모 버튼 렌더링될 때 데이터에서 주소 가져오도록 구현
 
 /*
 커밋을 열심히 하자
@@ -221,6 +289,5 @@ feat: Can open/close modal using by 'modalButton'
 feat: Show project's describe when mouse over the 'projectCard'
 
 12.20
-각 projectCard 마다 modalPageContent 넣기 
-
+feat: render Modal page from 'pageProjectData.js'
 */

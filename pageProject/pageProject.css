@@ -176,7 +176,7 @@ button#project_next:active {
     width: 77px;
     height: 1000px;
 }
-.project_modalButtonBoxS {
+.project_modalButtonBoxContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
