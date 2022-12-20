@@ -1,7 +1,7 @@
 const fairyMembers = [
   {
     id: 1,
-    picture: '../img/memoji/eunseon.png',
+    // picture: '../img/memoji/eunseon.png',
     membername: '리뷰요정',
     
     englishname: 'Eun-seon Jo',
@@ -17,7 +17,7 @@ const fairyMembers = [
   },
   {
       id: 2,
-      picture: '../img/memoji/seungmi.png',
+      // picture: '../img/memoji/seungmi.png',
       membername: '주제요정',
       
       englishname: 'Seng-mi Lee',
@@ -33,7 +33,7 @@ const fairyMembers = [
     },
     {
       id: 3,
-      picture: '../img/memoji/gyuri.png',
+      // picture: '../img/memoji/gyuri.png',
       membername: '시간요정',
       
       englishname: 'Gyu-ri Kim',
@@ -49,7 +49,7 @@ const fairyMembers = [
     },
     {
       id: 4,
-      picture: '../img/memoji/seungmi.png',
+      // picture: '../img/memoji/seungmi.png',
       membername: '운동요정',
       
       englishname: 'Song-min Shin',
@@ -65,7 +65,7 @@ const fairyMembers = [
     },
     {
       id: 5,
-      picture: '../img/memoji/jaehoon.png',
+      // picture: '../img/memoji/jaehoon.png',
       membername: '서기요정',
       
       englishname: 'Jae-hun Kim',
@@ -81,7 +81,7 @@ const fairyMembers = [
     },
     {
       id: 6,
-      picture: '../img/memoji/eunsu.png',
+      // picture: '../img/memoji/eunsu.png',
       membername: '공지요정',
       
       englishname: 'Eun-su Jang',
@@ -97,7 +97,7 @@ const fairyMembers = [
     },
     {
       id: 7,
-      picture: '../img/memoji/changyong.png',
+      // picture: '../img/memoji/changyong.png',
       membername: '척추요정',
       
       englishname: 'Chang-yong Shin',
@@ -113,7 +113,7 @@ const fairyMembers = [
     },
     {
       id: 8,
-      picture: '../img/memoji/sangkyo.png',
+      // picture: '../img/memoji/sangkyo.png',
       membername: '기상요정',
       
       englishname: 'Sang-kyo Kim',
