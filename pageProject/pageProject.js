@@ -51,10 +51,10 @@
 const renderProjectCard = data => {
     // 최상위 부모 요소 선언
     const elCard = document.createElement('li');
-    elCard.id = data.id;
     // 프로젝트 카드 = 이미지 영역 + 이름 영역
     const elImgArea = document.createElement('div');
     elImgArea.className = 'project_cardAreaImg';
+    elImgArea.id = data.id;
     const elName = document.createElement('span');
     elName.textContent = data.name;
     
@@ -184,7 +184,7 @@ const modal = document.querySelector('.project_modal'); // ; 안넣으면 뒤에
 [...cardImg].map(el => {
     el.addEventListener('click',(e) => {
         modal.classList.remove('hidden');
-        renderModalBox(dataProjects[0]);
+        renderModalBox(dataProjects.find(data => data.id === e.target.parentNode.id));
     });
 });
 //모달 밖을 클릭하면 닫는 
@@ -236,6 +236,9 @@ const renderModalBox = data => {
     
     project_modalButtonBox.append(project_modalButtonBoxContainer)
     project_modalButtonBoxContainer.append(project_modalButton,project_modalButtonText);
+
+    // history.pushState(null, null, data.id);
+    // 세션히스토리, 타이틀(변경하지않으면 null), url 키값
 }
 
 const initModalBox = () => {
@@ -243,30 +246,6 @@ const initModalBox = () => {
     while (project_modalBox.firstChild) {
         project_modalBox.firstChild.remove();
     }
-}
-
-const renderModalBoxExample = data => {
-    const project_modalBox = document.querySelector('.project_modalBox');
-    project_modalBox.id = `project_modal${data.id}`;
-    
-    // 이름 prepend
-    const project_modalBodyHeader = document.querySelector('.project_modalBodyHeader');
-    const project_modalProjectName = document.createElement('div');
-    project_modalProjectName.className = 'project_modalProjectName'
-    project_modalProjectName.textContent = data.name;
-    project_modalBodyHeader.prepend(project_modalProjectName);
-
-    // GitHub 버튼 링크 연결
-    const gitHubBtn = document.querySelector('#project_github');
-    gitHubBtn.addEventListener('click', () => {
-        window.open(data.modal.github);
-    });
-
-    // 데모 버튼 링크 연결
-    const demoBtn = document.querySelector('#project_demo');
-    demoBtn.addEventListener('click', () => {
-        window.open(data.modal.demo)
-    })
 }
 
 const renderModalHeader = data => {
@@ -334,6 +313,7 @@ const renderModalBodyContents = modalImages => {
 
 // 난이도: 중
 // ToDo 모달 클릭 시 데이터의 id로 주소가 들어가게끔 구현
+// ToDo 모달 닫았을 때, id 주소가 사라져야 함
 // ToDo 복사 버튼 클릭 시 위 주소를 복사
 // ToDo 복사됐을 때 '복사되었습니다'라고 토스트 메시지 표시
 
@@ -360,4 +340,5 @@ feat: render Modal page from 'pageProjectData.js'
 
 12.21
 feat: Implement slider per project card
+feat: Render modal from 'pageProjectData.js' by id
 */
