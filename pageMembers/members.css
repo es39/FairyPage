@@ -52,18 +52,16 @@
  transform: rotateY(180deg);
 }
 
-.member-card-front-1, .member-card-front-2, .member-card-front-3, .member-card-front-4,
-.member-card-front-5, .member-card-front-6, .member-card-front-7, .member-card-front-8,
-.member-card-back-1, .member-card-back-2, .member-card-back-3, .member-card-back-4,
-.member-card-back-5, .member-card-back-6, .member-card-back-7, .member-card-back-8 {
+.member-card-front,
+.member-card-back {
  position: absolute;
- width: 100%;
- height: 100%;
+ width: 200px;
+ height: 200px;
 }
 
 /* 카드 앞면 CSS */
 
-.member-card-front-1 {
+#member_eunseon_f {
  /* background: linear-gradient(to left, #a8b7f6, #6fb1fc); */
  background: #ffb3cd;
  color: black;
@@ -74,7 +72,7 @@
  align-items: center;
 }
 
-.member-card-front-2 {
+#member_seungmi_f {
  /* background: linear-gradient(to left, #a8b7f6, #6fb1fc); */
  background: #9a9d9f;
  color: black;
@@ -85,7 +83,7 @@
  align-items: center;
 }
 
-.member-card-front-3 {
+#member_gyuri_f {
  /* background: linear-gradient(to left, #a8b7f6, #6fb1fc); */
  background: #1addb6;
  color: black;
@@ -96,7 +94,7 @@
  align-items: center;
 }
 
-.member-card-front-4 {
+#member_songmin_f {
  /* background: linear-gradient(to left, #a8b7f6, #6fb1fc); */
  background: #ffeaa7;
  color: black;
@@ -107,7 +105,7 @@
  align-items: center;
 }
 
-.member-card-front-5{
+#member_jaehoon_f {
  background: #ff7675;
  color: black;
  z-index: 2;
@@ -117,7 +115,7 @@
  align-items: center;
 }
 
-.member-card-front-6 {
+#member_eunsu_f {
   background: #dfe6e9;
   color: black;
   z-index: 2;
@@ -127,7 +125,7 @@
   align-items: center;
  }
 
-.member-card-front-7 {
+#member_changyong_f {
   background: #74b9ff;
   color: black;
   z-index: 2;
@@ -137,7 +135,7 @@
   align-items: center;
  }
 
- .member-card-front-8 {
+ #member_sangkyo_f {
   background: #fab1a0;
   color: black;
   z-index: 2;
@@ -149,7 +147,7 @@
 
  /* 카드 뒷면 CSS */
 
-.member-card-back-1 {
+#member_eunseon_b {
  background: #e6559b;
  color: black;
  transform: rotateY(180deg);
@@ -160,7 +158,7 @@
  align-items: center;
 }
 
-.member-card-back-2 {
+#member_seungmi_b {
   background: #78898e;
   color: black;
   transform: rotateY(180deg);
@@ -171,7 +169,7 @@
   align-items: center;
  }
 
-  .member-card-back-3 {
+#member_gyuri_b {
   background: #00b894;
   color: black;
   transform: rotateY(180deg);
@@ -182,7 +180,7 @@
   align-items: center;
  }
 
- .member-card-back-4 {
+ #member_songmin_b {
   background: #fdcb6e;
   color: black;
   transform: rotateY(180deg);
@@ -193,7 +191,7 @@
   align-items: center;
  }
 
-.member-card-back-5 {
+ #member_jaehoon_b {
  background: #f83939;
  color: black;
  transform: rotateY(180deg);
@@ -204,7 +202,7 @@
  align-items: center;
 }
 
-.member-card-back-6 {
+#member_eunsu_b {
   background: #b2bec3;
   color: black;
   transform: rotateY(180deg);
@@ -215,7 +213,7 @@
   align-items: center;
  }
 
- .member-card-back-7 {
+ #member_changyong_b {
   background: #0984e3;
   color: black;
   transform: rotateY(180deg);
@@ -226,7 +224,7 @@
   align-items: center;
  }
 
- .member-card-back-8 {
+ #member_sangkyo_b {
   background: #e17055;
   color: black;
   transform: rotateY(180deg);
@@ -235,15 +233,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
- }
+}
 
 .member-card--avatar--wrapper {
  border: 1px 1px 1px solid black;
- margin: 30px;
+ margin-bottom: 10px;
 }
 
 img {
- width: 100px;
+ width: 130px;
 }
 
 .member_Englishname {
