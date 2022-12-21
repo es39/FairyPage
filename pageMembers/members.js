@@ -229,15 +229,20 @@ const member_sangkyo_f= (obj) => {
 // ==========================
 
 // container <- inner <- f&b
-const upperul1 = document.querySelector("div.member-card-inner");
-const upperul2 = document.querySelector("div.member-card-inner");
+const upperul1 = document.querySelector("#member_inner_eunseon");
+const upperul2 = document.querySelector("#member_inner_seungmi");
+const upperul3 = document.querySelector("#member_inner_gyuri");
+const upperul4 = document.querySelector("#member_inner_songmin");
+const upperul5 = document.querySelector("#member_inner_jaehun");
+const upperul6 = document.querySelector("#member_inner_eunsu");
+const upperul7 = document.querySelector("#member_inner_changyong");
+const upperul8 = document.querySelector("#member_inner_sangkyo");
 
 //은선님
 const member_eunseon = (element) => {
   // element.append(member_eunseon_b(fairyMembers[0]));
   element.append(member_eunseon_f(fairyMembers[0]));
 };
-
 member_eunseon(upperul1);
 
 //승미님
@@ -245,53 +250,46 @@ const member_seungmi = (element) => {
   element.append(member_seungmi_f(fairyMembers[1]));
   // element.append(member_seungmi_b(fairyMembers[1]));
 };
-
-// member_seungmi(upperul2);
+member_seungmi(upperul2);
 
 //규리님
-const upperrenderFront3 = (element) => {
-  element.append(upperCardFront(fairyMembers[2]));
+const member_gyuri = (element) => {
+  element.append(member_gyuri_f(fairyMembers[2]));
   // element.append(upperCardBack(fairyMembers[2]));
 };
-
-// upperrenderFront3(upperul1);
+member_gyuri(upperul3);
 
 //송민님
-const upperrenderFront4 = (element) => {
-  element.append(upperCardFront(fairyMembers[3]));
+const member_songmin = (element) => {
+  element.append(member_songmin_f(fairyMembers[3]));
   // element.append(upperCardBack(fairyMembers[3]));
 };
-
-// upperrenderFront4(upperul1);
+member_songmin(upperul4);
 
 //재훈님
-const upperrenderFront5 = (element) => {
-  element.append(upperCardFront(fairyMembers[4]));
+const member_jaehun = (element) => {
+  element.append(member_jaehun_f(fairyMembers[4]));
   // element.append(upperCardBack(fairyMembers[4]));
 };
-
-// upperrenderFront5(upperul1);
+member_jaehun(upperul5);
 
 //은수님
-const upperrenderFront6 = (element) => {
-  element.append(upperCardFront(fairyMembers[5]));
+const member_eunsu = (element) => {
+  element.append(member_eunsu_f(fairyMembers[5]));
   // element.append(upperCardBack(fairyMembers[5]));
 };
-
-// upperrenderFront6(upperul1);
+member_eunsu(upperul6);
 
 //창용님
-const upperrenderFront7 = (element) => {
-  element.append(upperCardFront(fairyMembers[6]));
+const member_changyong = (element) => {
+  element.append(member_changyong_f(fairyMembers[6]));
   // element.append(upperCardBack(fairyMembers[6]));
 };
-
-// upperrenderFront7(upperul1);
+member_changyong(upperul7);
 
 //상교님
-const upperrenderFront8 = (element) => {
-  element.append(upperCardFront(fairyMembers[7]));
+const member_sangkyo = (element) => {
+  element.append(member_sangkyo_f(fairyMembers[7]));
   // element.append(upperCardBack(fairyMembers[7]));
 };
-
-// upperrenderFront8(upperul1);
+member_sangkyo(upperul8);

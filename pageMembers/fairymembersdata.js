@@ -49,7 +49,7 @@ const fairyMembers = [
     },
     {
       id: 4,
-      picture: '../img/memoji/seungmi.png',
+      picture: '../img/memoji/songmin.png',
       membername: '운동요정',
       
       englishname: 'Song-min Shin',
