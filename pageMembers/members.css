@@ -108,7 +108,7 @@ border-radius: 20px;
  align-items: center;
 }
 
-#member_jaehoon_f {
+#member_jaehun_f {
  background: #ff7675;
  color: black;
  z-index: 2;
@@ -194,7 +194,7 @@ border-radius: 20px;
   align-items: center;
  }
 
- #member_jaehoon_b {
+ #member_jaehun_b {
  background: #f83939;
  color: black;
  transform: rotateY(180deg);
@@ -270,6 +270,59 @@ img {
   transform: scale(2);
   transition-duration: 0.5s;
 
+}
+
+.member-quote3
+{
+  font-weight: bold;
+  position:relative;
+  padding:20px 20px 20px 30px;
+  color:#c9c9c9;
+  text-decoration:none;
+  font-size:20px;
+  font-family:sans-serif;
+  letter-spacing:10px;
+  text-transform:uppercase;
+}
+.member-quote3:before
+{
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:2px;
+  background:#66BB6A;
+  transform-style:linear;
+  transition-property:height,width;
+  transition-delay:0.5s,1s;
+  transition-duration:0.5s;
+}
+.member-quote3:hover:before
+{
+  transition-property:width,height;
+  width:15px;
+  height:100%;
+}
+.member-quote3:after
+{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  width:100%;
+  height:100%;
+  background:#637881;
+  transform:scaleX(0);
+  transition:0.5s;
+  transition-delay:0s;
+  transform-origin:left;
+  z-index:-1;
+}
+.member-quote3:hover:after
+{
+  transform:scaleX(1);
+  transition-delay:1.5s;
 }
 
 /* main {
