@@ -8,10 +8,28 @@
 }
 
 .project_content {
-    max-width: 1350px;
+    /* max-width: 1350px;
     min-width: 1350px;
     max-height: 848px;
-    min-height: 848px;
+    min-height: 848px; */
+    width: 1350px;
+    height: 848px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    border: solid 1px red;
+}
+
+.project_slideWrapper {
+    position: relative;
+    width: 1240px;
+    /* 280px + 30px === 310px * 4 === 1240px */
+    height: 450px;
+    margin: 0 auto;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -25,19 +43,29 @@
     text-align: center;
 }
 
-.project_cardArea {
+.project_slides {
+    position: absolute;
+    left: 0;
+    top: 0;
     display: flex;
     justify-content: center;
 }
+.project_slides.animated {
+    transition: 0.5s ease-out;
+}
 
-.project_cardArea li{
+.project_slides li{
     width: 300px;
     height: 450px;
+    float: left;
     /* margin: 0 15px 0 15px; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+.project_slides li:not(:last-child) {
+    margin-right: 30px;
 }
 .project_cardAreaImg {
     position: relative;

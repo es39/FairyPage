@@ -51,7 +51,7 @@
 const renderProjectCard = data => {
     // 최상위 부모 요소 선언
     const elCard = document.createElement('li');
-    elCard.id = `ProjectCard${data.id}`
+    elCard.id = data.id;
     // 프로젝트 카드 = 이미지 영역 + 이름 영역
     const elImgArea = document.createElement('div');
     elImgArea.className = 'project_cardAreaImg';
@@ -87,7 +87,7 @@ const renderProjectCard = data => {
 };
 
 // 2. ul.project_cardArea 요소에 컴포넌트를 배열 데이터만큼 반복 렌더링
-const elProjectCardArea = document.querySelector('.project_cardArea');
+const elProjectCardArea = document.querySelector('.project_slides');
 // 아래 코드를 반복하게 해야 함
 dataProjects.map(data => {
     const elProjectCard = renderProjectCard(data);
@@ -96,6 +96,79 @@ dataProjects.map(data => {
 
 
 
+// * 슬라이드 기능 구현
+const slides = document.querySelector('.project_slides'),
+    slide = slides.querySelectorAll('li'),
+    slideCount = slide.length,
+    slideWidth = 280,
+    slideMargin = 30,
+    prevBtn = document.querySelector('#project_prev'), 
+    nextBtn = document.querySelector('#project_next');
+let currentIdx = 0;
+makeClone();
+
+function makeClone() {
+    for (let i=0; i<slideCount; i++) {
+        //a.cloneNode(true) a의 자식요소까지 모두 복사
+        let cloneSlide = slide[i].cloneNode(true);
+        cloneSlide.classList.add('clone');
+        slides.appendChild(cloneSlide);
+    }
+    for (let i=slideCount-1; i>=0; i--) {
+        let cloneSlide = slide[i].cloneNode(true);
+        cloneSlide.classList.add('clone');
+        slides.prepend(cloneSlide);
+    }
+    updateWidth();
+    setInitPos();
+    setTimeout(()=>{
+        slides.classList.add('animated');
+    }, 100);
+    
+}
+//전체 갯수 구하고 하나의 슬라이드 하나와 하나의 마진을 곱한다
+function updateWidth() {
+    const currentSlides = slide;
+    const newSlideCount = currentSlides.length;
+    const newWidth = (slideWidth + slideMargin) * newSlideCount - slideMargin + 'px' //! 'p'가 뭔가용..?? px오타! 아하!
+    slides.style.width = newWidth;
+}
+
+function setInitPos() {
+    // let initTranslateValue = -((slideWidth + slideMargin) * slideCount);
+    slides.style.transform = `translateX(0px)`;
+}
+
+nextBtn.addEventListener('click', () => {
+    console.log(currentIdx);
+    moveSlide(currentIdx + 2);
+});
+prevBtn.addEventListener('click', () => {
+    console.log(currentIdx);
+    moveSlide(currentIdx - 2);
+});
+
+function moveSlide(num) {
+    slides.style.left = -num * (slideWidth + slideMargin) + 'px';
+    currentIdx = num;
+    //여기까지 하면 우리가 구현한데까지된것
+    console.log(currentIdx,slideCount);
+    
+    if (currentIdx === slideCount || currentIdx === -slideCount) {
+        setTimeout(() => {
+            // 값을 초기화할 때는 처음 위치로 되돌아가는 걸 애니메이션으로 보여주지 않도록
+            // 애니메이션 관련 클래스를 제거
+            slides.classList.remove('animated');
+            
+            slides.style.left = '0px';
+            currentIdx = 0;
+        }, 500);
+        setTimeout(() => {
+            // 위치 초기화가 완료되면 다시 애니메이션 활성화
+            slides.classList.add('animated');
+        }, 600);
+    }
+}
 /*
 +=============+
 | 모달 토글 기능 |
@@ -259,12 +332,6 @@ const renderModalBodyContents = modalImages => {
     return project_modalBodyContents;
 }
 
-
-// 난이도: 상
-// TODO 슬라이드 위치에 따라 카드 4개씩 랜더링
-// 예를 들어 초기 상태에서는 슬라이드 위치가 0, 카드는 0~3번 인덱스까지 렌더링
-// 다음 버튼 클릭 시 슬라이드 위치는 +-3, 카드는 3~6번 인덱스까지 렌더링
-
 // 난이도: 중
 // ToDo 모달 클릭 시 데이터의 id로 주소가 들어가게끔 구현
 // ToDo 복사 버튼 클릭 시 위 주소를 복사
@@ -290,4 +357,7 @@ feat: Show project's describe when mouse over the 'projectCard'
 
 12.20
 feat: render Modal page from 'pageProjectData.js'
+
+12.21
+feat: Implement slider per project card
 */

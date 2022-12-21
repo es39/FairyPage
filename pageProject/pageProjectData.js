@@ -68,5 +68,27 @@ const dataProjects = [
             demo: "",
             image: []
         }
-    }
+    },
+    {
+        id: "7",
+        image: "../img/projectImg.png",
+        name: "card 7",
+        describe: "일곱번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
+        modal: {
+            github: "",
+            demo: "",
+            image: []
+        }
+    },
+    {
+        id: "8",
+        image: "../img/projectImg.png",
+        name: "card 8",
+        describe: "여덟번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
+        modal: {
+            github: "",
+            demo: "",
+            image: []
+        }
+    },
 ]
