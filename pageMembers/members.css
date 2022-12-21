@@ -255,11 +255,12 @@ img {
 }
 
 
-.member_icon--wrapper {
+/* .member_icon--wrapper {
+ border: 1px black solid;
  display: flex;
  width: 70%;
  justify-content: space-around;
-}
+} */
 
 .member-quote {
   font-family: arial;
