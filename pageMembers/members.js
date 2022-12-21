@@ -3,13 +3,15 @@
 // 3. rendering 
 // 4. hover js 에서 주기
 
-// console.log(fairyMembers);
+// conatiner <- inner <- front-n & back-n 추가
+// id css 추가
 
+console.log(fairyMembers);
 
+// eunseon
 
 const upperCardFront= (obj) => {
-  const frontList = document.createElement("div");
-  frontList.className = "member_card1--front";
+  const frontList = document.querySelector("#member_eunseon_f");
 
   // 앞면 미모티콘 className
   const avatarWrapper = document.createElement("div");
@@ -17,7 +19,7 @@ const upperCardFront= (obj) => {
 
   // 앞면 00요정 className
   const fairyRole = document.createElement("div");
-  fairyRole.className = "member_fairy--role"; 
+  fairyRole.className = "member-card-name"; 
   fairyRole.textContent = obj.membername;
 
   // 미모티콘 붙이기
@@ -26,35 +28,38 @@ const upperCardFront= (obj) => {
   avatarImg.alt = 'avatar of ' + obj.membername;
   avatarWrapper.append(avatarImg);
 
+  //const 
+
  frontList.append(avatarWrapper, fairyRole);
  return frontList;
 
 }
 
-// const upperCardBack = (obj) => {
-// // 뒷면 시작
-//   const backList = document.createElement("div");
-//   backList.className = "member_card1--back";
+const upperCardBack = (obj) => {
+// 뒷면 시작
+  const backList = document.querySelector("div#member-card-back");
 
-//   const nameEnglish = document.createElement('div');
-//   nameEnglish.className = 'member_Englishname'
-//   nameEnglish.textContent = obj.englishname;
+  const nameEnglish = document.createElement('h5');
+  nameEnglish.className = 'member_Englishname'
+  nameEnglish.textContent = obj.englishname;
 
-//   const memberBrief = document.createElement('div');
-//   memberBrief.className = "member_Brief"
-//   memberBrief.textContent = obj.wanttobe
+  const memberBrief = document.createElement('div');
+  memberBrief.className = "member_Brief"
+  memberBrief.textContent = obj.wanttobe
 
-//   const memberSpecialty = document.createElement('div');
-//   memberSpecialty.className = "member_Specialty"
-//   memberSpecialty.textContent = obj.specialty
+  const memberSpecialty = document.createElement('div');
+  memberSpecialty.className = "member_Specialty"
+  memberSpecialty.textContent = obj.specialty
 
-//   const memberRole = document.createElement('div');
-//   memberRole.className = "member_Role"
-//   memberRole.textContent = obj.role
+  const memberRole = document.createElement('div');
+  memberRole.className = "member_Role"
+  memberRole.textContent = obj.role
 
-//   backList.append(nameEnglish, memberBrief, memberSpecialty, memberRole)
-//   return backList;
-// }
+  backList.append(nameEnglish, memberBrief, memberSpecialty, memberRole)
+  return backList;
+}
+
+
 
 // // const upperCardInner = (frontList, backList) => {
 // //   const upperInner = document.createElement("div");
@@ -100,31 +105,27 @@ const upperCardFront= (obj) => {
 //     return div;
 // }
 
-// const upperul = document.querySelector("div.member_card--upper");
-// const lowerul = document.querySelector("div.member_card--lower");
+// container <- inner <- f&b
+const upperul1 = document.querySelector("div.member-card-inner");
+const upperul2 = document.querySelector("div.member-card-inner");
 
-// // upperul.append(upperCard(fairyMembers));
-// // lowerul.append(lowerCard(fairyMembers));
+// upperul1.append(frontList);
 
-// const upperrenderFront = (element) => {
-//     for (let i = 0; i < 4; i += 1) {
-//       element.append(upperCardFront(fairyMembers[i]));
-//     }
+// const upperul = document.querySelector("div.member-card-container");
+// upperul.append(upperul1)
+
+
+const upperrenderFront1 = (element) => {
+    element.append(upperCardFront(fairyMembers[0]));
+    element.append(upperCardBack(fairyMembers[0]));
+};
+
+// const upperrenderBack1 = (element) => {
+//   element.append(upperCardBack(fairyMembers[1]));
 // };
 
-// const upperrenderBack = (element) => {
-//   for (let i = 0; i < 4; i += 1) {
-//     element.append(upperCardBack(fairyMembers[i]));
-//   }
-// };
-
-// const lowerrender = (element) => {
-//     for (let i = 4; i < 8; i += 1) {
-//       element.append(lowerCard(fairyMembers[i]));
-//     }
-// };
-
-// upperrenderFront(upperul);
+upperrenderFront1(upperul1);
+// upperrenderBack1(upperul2);
 // upperrenderBack(upperul);
 // lowerrender(lowerul); 
 

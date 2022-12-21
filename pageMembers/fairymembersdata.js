@@ -1,7 +1,7 @@
 const fairyMembers = [
   {
     id: 1,
-    // picture: '../img/memoji/eunseon.png',
+    picture: './img/memoji/eunseon.png',
     membername: '리뷰요정',
     
     englishname: 'Eun-seon Jo',
@@ -17,7 +17,7 @@ const fairyMembers = [
   },
   {
       id: 2,
-      // picture: '../img/memoji/seungmi.png',
+      picture: '../img/memoji/seungmi-1.png',
       membername: '주제요정',
       
       englishname: 'Seng-mi Lee',
@@ -33,7 +33,7 @@ const fairyMembers = [
     },
     {
       id: 3,
-      // picture: '../img/memoji/gyuri.png',
+      picture: '../img/memoji/gyuri.png',
       membername: '시간요정',
       
       englishname: 'Gyu-ri Kim',
@@ -49,7 +49,7 @@ const fairyMembers = [
     },
     {
       id: 4,
-      // picture: '../img/memoji/seungmi.png',
+      picture: '../img/memoji/seungmi.png',
       membername: '운동요정',
       
       englishname: 'Song-min Shin',
@@ -65,12 +65,12 @@ const fairyMembers = [
     },
     {
       id: 5,
-      // picture: '../img/memoji/jaehoon.png',
+      picture: '../img/memoji/jaehoon.png',
       membername: '서기요정',
       
       englishname: 'Jae-hun Kim',
       wanttobe: '탐구하고 기록하는 개발자',
-      specialty: '???',
+      specialty: '모르는 걸 마주하는 상황을 즐깁니다',
       role: '스터디 안에서 회의 기록을 담당하고 있어요.',
 
       selfintroductions: '안녕하세요. 탐구하고 기록하는 개발자 김재훈입니다. 새로운 것을 발견하고, 발견을 기록합니다. 넘쳐나는 정보의 홍수 속에서 좋은 정보를 모아 사람들에게 더 좋은 정보를 전달하려고 노력해요. 언제든지 커피챗 환영! 이메일이나 SNS DM으로 연락 주세요.',
@@ -81,7 +81,7 @@ const fairyMembers = [
     },
     {
       id: 6,
-      // picture: '../img/memoji/eunsu.png',
+      picture: '../img/memoji/eunsu.png',
       membername: '공지요정',
       
       englishname: 'Eun-su Jang',
@@ -97,7 +97,7 @@ const fairyMembers = [
     },
     {
       id: 7,
-      // picture: '../img/memoji/changyong.png',
+      picture: '../img/memoji/changyong.png',
       membername: '척추요정',
       
       englishname: 'Chang-yong Shin',
@@ -113,7 +113,7 @@ const fairyMembers = [
     },
     {
       id: 8,
-      // picture: '../img/memoji/sangkyo.png',
+      picture: '../img/memoji/sangkyo.png',
       membername: '기상요정',
       
       englishname: 'Sang-kyo Kim',
