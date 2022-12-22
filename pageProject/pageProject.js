@@ -130,7 +130,7 @@ function makeClone() {
 function updateWidth() {
     const currentSlides = slide;
     const newSlideCount = currentSlides.length;
-    const newWidth = (slideWidth + slideMargin) * newSlideCount - slideMargin + 'px' //! 'p'가 뭔가용..?? px오타! 아하!
+    const newWidth = (slideWidth + slideMargin) * newSlideCount - slideMargin + 'px';
     slides.style.width = newWidth;
 }
 
@@ -188,13 +188,28 @@ const modal = document.querySelector('.project_modal'); // ; 안넣으면 뒤에
     });
 });
 //모달 밖을 클릭하면 닫는 
-window.addEventListener ('click', (e) => {
+window.addEventListener('click', (e) => {
     if (e.target === modal) {
         modal.classList.add('hidden');
-        initModalBox();
+        // 뒤로가기를 실행
+        window.history.back();
     };
 });
 
+// window.onpopstate 자체가 이 웹사이트에서 뒤로가기를 눌렀을 때 뒤로가기 이벤트를 감지
+window.onpopstate = (event) => {
+    // split(/)을 하면 https://127.0.0.1:5500/project-1 이 주소를 '/' 기준으로 나눔
+    // includes의 의미는 /로 나눈 배열 중 마지막 요소 project-1를 pop했을 때 리턴
+    // 즉 'project-1'에 'project'가 포함되어 있느냐
+    
+    // 마지막으로 정리하면 모달 창이 열려 있을 때 뒤로가기 이벤트가 발생했다면 DOM에 남아있는 쓰레기 모달 창을 제거
+    if (modalUrl.split('/').pop().includes('project')) {
+        initModalBox();
+    }
+}
+
+// 모달이 렌더링됐을 때 주소를 담기 위한 전역 변수
+let modalUrl = '';
 /*
 +=================+
 |  모달 렌더링 기능   |
@@ -226,21 +241,56 @@ const renderModalBox = data => {
     const project_modalButtonText = document.createElement('span')
     project_modalButtonText.textContent = '복사'
 
+    //모달 복사버튼 클릭 시 toast message 
+    const project = document.querySelector('#project');
+    const project_toastMessage = document.createElement('div');
+    project_toastMessage.className = 'project_toastMessage'
+    project_toastMessage.textContent = '복사 되었습니다!'
+    project.append(project_toastMessage);
+
+    
+    let isToastShown = false;  //동작 완료여부 판별 변수 입니다.
+    project_modalButton.addEventListener('click', function () {
+        // 복사 버튼 눌렀을 때 현재 주소(모달 창의 주소)를 클립보드에 복사
+        navigator.clipboard.writeText(window.location.href);
+
+        if (isToastShown) return;   // 토스트 메시지가 띄어져 있다면 함수를 끝냄
+        isToastShown = true;
+        project_toastMessage.classList.add('show'); // show라는 클래스를 추가해서 토스트 메시지를 띄우는 애니메이션을 발동시킴
+        setTimeout(function () {
+            // 2700ms 후에 show 클래스를 제거함
+            project_toastMessage.classList.remove('show');
+            isToastShown = false;
+        }, 2700);
+    });
+
+    
+
     // 모달 본문 영역 렌더링
     const content = renderModalBodyContents(data.modal.image);
 
     //모달박스에 넣기
     project_modalBox.append(project_modalBodyContainer,project_modalButtonBox);
     project_modalBody.append(project_modalBodyHeader, content);
-    project_modalBodyContainer.append(project_modalBody)
+    project_modalBodyContainer.append(project_modalBody);   
     
     project_modalButtonBox.append(project_modalButtonBoxContainer)
     project_modalButtonBoxContainer.append(project_modalButton,project_modalButtonText);
 
-    // history.pushState(null, null, data.id);
+    // http://127.0.0.1:5500/img
+    // http://127.0.0.1/project/1 <- /project/
+    // http://127.0.0.1/project-1 <- /
+    // http://127.0.0.1:5500/project-1
+    
+    history.pushState(null, null, `project-${data.id}`);
     // 세션히스토리, 타이틀(변경하지않으면 null), url 키값
+    
+    // 1번 카드를 클릭한 경우 http://127.0.0.1:5500/project-1이 window.location.href
+    // 이 주소로 전역 변수 modalUrl 값을 갱신
+    modalUrl = window.location.href;
 }
 
+// 초기화: 모달 창을 닫았을 때 쌓이는 쓰레기 모달 제거
 const initModalBox = () => {
     const project_modalBox = document.querySelector('.project_modalBox');
     while (project_modalBox.firstChild) {
@@ -271,6 +321,11 @@ const renderModalHeader = data => {
     const project_modalProjectGitHubButton_span = document.createElement('span');
     project_modalProjectGitHubButton_span.textContent = 'View Code';
 
+    //! 깃허브 이벤트리스너 새탭으로 열기 구현
+    project_modalProjectGitHubButton.addEventListener('click', () => {
+        window.open(`${data.modal.github}`)
+    })
+
     // 모달 프로젝트 헤더 링크버튼 - 데모사이트
     const project_modalProjectDemoButton = document.createElement('button');
     project_modalProjectDemoButton.className = 'project_modalProjectButton';
@@ -279,6 +334,11 @@ const renderModalHeader = data => {
     project_modalProjectDemoHubButton_img.src = './img/project_to.png';
     const project_modalProjectDemoHubButton_span = document.createElement('span');
     project_modalProjectDemoHubButton_span.textContent = 'View Site';
+
+    // //! 데모 이벤트리스너 새탭으로 열기 구현
+    project_modalProjectDemoButton.addEventListener('click', () => {
+        window.open(`${data.modal.demo}`)
+    })
 
     // 모달 프로젝트 헤더에 제목, 버튼 뿌려주기
     project_modalBodyHeader.append(project_modalProjectName, project_modalProjectButtonBox);
@@ -311,14 +371,9 @@ const renderModalBodyContents = modalImages => {
     return project_modalBodyContents;
 }
 
-// 난이도: 중
-// ToDo 모달 클릭 시 데이터의 id로 주소가 들어가게끔 구현
-// ToDo 모달 닫았을 때, id 주소가 사라져야 함
-// ToDo 복사 버튼 클릭 시 위 주소를 복사
-// ToDo 복사됐을 때 '복사되었습니다'라고 토스트 메시지 표시
-
-// 난이도: 하
-// ToDo 깃헙, 데모 버튼 렌더링될 때 데이터에서 주소 가져오도록 구현
+// 난이도: 상
+// ToDo 특정 주소로 들어갔을 때 모달이 띄워진 상태로 보여줘야 함
+// => 서버가 없어서 구현할 수 없음
 
 /*
 커밋을 열심히 하자
@@ -340,5 +395,12 @@ feat: render Modal page from 'pageProjectData.js'
 
 12.21
 feat: Implement slider per project card
-feat: Render modal from 'pageProjectData.js' by id
+feat: Render modal from 'pageProjectData.js' by id 
+
+12.22
+feat: Copy current page URL, then show 'Copied' toast message.
+feat: Add go to GitHub and Demo site when click that buttons.
+feat: Remove 'project-<id>' from URL when close modal.
+
 */
+

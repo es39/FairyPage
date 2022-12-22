@@ -6,7 +6,7 @@ const dataProjects = [
         describe: "첫번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
         modal: {
             github: "https://github.com/codestates-fairyCompany/FairyPage",
-            demo: "",
+            demo: "https://github.com/codestates-fairyCompany/FairyPage",
             image: [
                 './img/123.png',
                 './img/project_github.png',
@@ -20,8 +20,8 @@ const dataProjects = [
         name: "card 2",
         describe: "두번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
         modal: {
-            github: "",
-            demo: "",
+            github: "https://github.com/codestates-fairyCompany/FairyPage",
+            demo: "https://github.com/codestates-fairyCompany/FairyPage",
             image: [
                 './img/123.png',
                 './img/project_github.png',
@@ -35,8 +35,8 @@ const dataProjects = [
         name: "card 3",
         describe: "세번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
         modal: {
-            github: "",
-            demo: "",
+            github: "https://github.com/codestates-fairyCompany/FairyPage",
+            demo: "https://github.com/codestates-fairyCompany/FairyPage",
             image: []
         }
     },
@@ -46,8 +46,8 @@ const dataProjects = [
         name: "card 4",
         describe: "네번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
         modal: {
-            github: "",
-            demo: "",
+            github: "https://github.com/codestates-fairyCompany/FairyPage",
+            demo: "https://github.com/codestates-fairyCompany/FairyPage",
             image: []
         }
     },
@@ -57,8 +57,8 @@ const dataProjects = [
         name: "card 5",
         describe: "다섯번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
         modal: {
-            github: "",
-            demo: "",
+            github: "https://github.com/codestates-fairyCompany/FairyPage",
+            demo: "https://github.com/codestates-fairyCompany/FairyPage",
             image: []
         }
     },
@@ -68,8 +68,8 @@ const dataProjects = [
         name: "card 6",
         describe: "여섯번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
         modal: {
-            github: "",
-            demo: "",
+            github: "https://github.com/codestates-fairyCompany/FairyPage",
+            demo: "https://github.com/codestates-fairyCompany/FairyPage",
             image: []
         }
     },
@@ -79,8 +79,8 @@ const dataProjects = [
         name: "card 7",
         describe: "일곱번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
         modal: {
-            github: "",
-            demo: "",
+            github: "https://github.com/codestates-fairyCompany/FairyPage",
+            demo: "https://github.com/codestates-fairyCompany/FairyPage",
             image: []
         }
     },
@@ -90,8 +90,8 @@ const dataProjects = [
         name: "card 8",
         describe: "여덟번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
         modal: {
-            github: "",
-            demo: "",
+            github: "https://github.com/codestates-fairyCompany/FairyPage",
+            demo: "https://github.com/codestates-fairyCompany/FairyPage",
             image: []
         }
     },

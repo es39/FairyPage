@@ -260,3 +260,41 @@ button#project_next:active {
     color: white;
     font-size: 0.9rem;
 }
+
+
+
+.project_toastMessage {
+    visibility: hidden;   
+    position: fixed;        
+    top: 100px;      
+    left: 50%;                   
+    transform: translateX(-50%);     
+    min-width: 100px;    
+    border-radius: 25px;    
+    background-color: #666666;      
+    color: #FFFFFF;  
+    z-index: 9999; /* 비둘기야 밥먹쟈 */
+    padding: 15px 25px;       /*패딩 (상하, 좌우)*/
+}
+.project_toastMessage.show {
+    visibility: visible;     /* 보이게*/
+    animation: fade-in 700ms, fade-out 700ms 2000ms      /* 700ms동안 fade-in하고 2000ms 딜레이를 갖고 700ms동안 fade-out함*/
+}
+@keyframes fade-in {
+    /* 투명도가 0부터 1로 */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fade-out {
+    /* 투명도가 1에서 0으로 */
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
