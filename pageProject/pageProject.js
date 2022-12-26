@@ -304,7 +304,7 @@ const renderModalHeader = data => {
     project_modalBodyHeader.className = 'project_modalBodyHeader';
 
     // 모달 프로젝트 헤더 제목
-    const project_modalProjectName = document.createElement('div');
+    const project_modalProjectName = document.createElement('h1');
     project_modalProjectName.className = 'project_modalProjectName';
     project_modalProjectName.textContent = data.name;
     
@@ -335,7 +335,7 @@ const renderModalHeader = data => {
     const project_modalProjectDemoHubButton_span = document.createElement('span');
     project_modalProjectDemoHubButton_span.textContent = 'View Site';
 
-    // //! 데모 이벤트리스너 새탭으로 열기 구현
+    //! 데모 이벤트리스너 새탭으로 열기 구현
     project_modalProjectDemoButton.addEventListener('click', () => {
         window.open(`${data.modal.demo}`)
     })

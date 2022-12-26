@@ -2,7 +2,7 @@ const dataProjects = [
     {
         id: "1",
         image: "../img/projectImg.png",
-        name: "card 1",
+        name: "Fairy Company",
         describe: "첫번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
         modal: {
             github: "https://github.com/codestates-fairyCompany/FairyPage",
