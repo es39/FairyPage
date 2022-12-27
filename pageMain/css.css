@@ -22,13 +22,13 @@
 }
 
 .main_logo > a > img{
-  width: 70px;
-  height: 70px;
-  border-radius: 30%;
+  width: 100%;
+  height: 100%;
+  /* border-radius: 30%; */
   margin-top: 5px;
   margin-left: 5px;
-  background-image: url(/src/img/96c5d003503833f5.png);
-  background-size: cover;
+  /* background-image: url(/src/img/96c5d003503833f5.png); */
+  /* background-size: cover; */
 }
 
 .main_nav{
