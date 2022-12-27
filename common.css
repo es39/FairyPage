@@ -26,6 +26,7 @@ html{
 	    ************************************************************ */
 	overflow-y:scroll; /* 문서전체에 세로 스크롤바자국 항상 표시 */
 	overflow-x:hidden; /* 문서전체에 가로 스크롤바자국 항상 숨김 */
+	scroll-behavior: smooth;
 }
 
 article,aside,details,figcaption,figure,
@@ -68,3 +69,4 @@ input,select{vertical-align:middle;} /*문자와 나란히 입력박스를 배�
 	text-indent:-9999px;
 }
 .hidden{display:none;}
+
