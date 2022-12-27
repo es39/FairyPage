@@ -2,12 +2,16 @@ const dataProjects = [
     {
         id: "1",
         image: "../img/projectImg.png",
-        name: "card 1",
+        name: "Fairy Company",
         describe: "첫번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
         modal: {
-            github: "",
-            demo: "",
-            image: []
+            github: "https://github.com/codestates-fairyCompany/FairyPage",
+            demo: "https://github.com/codestates-fairyCompany/FairyPage",
+            image: [
+                './img/123.png',
+                './img/project_github.png',
+                './img/96c5d003503833f5.png'
+            ]
         }
     },
     {
@@ -15,44 +19,80 @@ const dataProjects = [
         image: "../img/projectImg.png",
         name: "card 2",
         describe: "두번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
-        bodyImage: [
-            "../pageProject/projectImage/2/sample.png"
-        ]
+        modal: {
+            github: "https://github.com/codestates-fairyCompany/FairyPage",
+            demo: "https://github.com/codestates-fairyCompany/FairyPage",
+            image: [
+                './img/123.png',
+                './img/project_github.png',
+                './img/96c5d003503833f5.png'
+            ]
+        }
     },
     {
         id: "3",
         image: "../img/projectImg.png",
         name: "card 3",
         describe: "세번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
-        bodyImage: [
-            "../pageProject/projectImage/3/sample.png"
-        ]
+        modal: {
+            github: "https://github.com/codestates-fairyCompany/FairyPage",
+            demo: "https://github.com/codestates-fairyCompany/FairyPage",
+            image: []
+        }
     },
     {
         id: "4",
         image: "../img/projectImg.png",
         name: "card 4",
         describe: "네번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
-        bodyImage: [
-            "../pageProject/projectImage/4/sample.png"
-        ]
+        modal: {
+            github: "https://github.com/codestates-fairyCompany/FairyPage",
+            demo: "https://github.com/codestates-fairyCompany/FairyPage",
+            image: []
+        }
     },
     {
         id: "5",
         image: "../img/projectImg.png",
         name: "card 5",
         describe: "다섯번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
-        bodyImage: [
-            "../pageProject/projectImage/5/sample.png"
-        ]
+        modal: {
+            github: "https://github.com/codestates-fairyCompany/FairyPage",
+            demo: "https://github.com/codestates-fairyCompany/FairyPage",
+            image: []
+        }
     },
     {
         id: "6",
         image: "../img/projectImg.png",
         name: "card 6",
         describe: "여섯번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
-        bodyImage: [
-            "../pageProject/projectImage/6/sample.png"
-        ]
-    }
+        modal: {
+            github: "https://github.com/codestates-fairyCompany/FairyPage",
+            demo: "https://github.com/codestates-fairyCompany/FairyPage",
+            image: []
+        }
+    },
+    {
+        id: "7",
+        image: "../img/projectImg.png",
+        name: "card 7",
+        describe: "일곱번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
+        modal: {
+            github: "https://github.com/codestates-fairyCompany/FairyPage",
+            demo: "https://github.com/codestates-fairyCompany/FairyPage",
+            image: []
+        }
+    },
+    {
+        id: "8",
+        image: "../img/projectImg.png",
+        name: "card 8",
+        describe: "여덟번째 프로젝트를 소개합니다. 간단한 프로젝트 설명이 들어갈 자리입니다.",
+        modal: {
+            github: "https://github.com/codestates-fairyCompany/FairyPage",
+            demo: "https://github.com/codestates-fairyCompany/FairyPage",
+            image: []
+        }
+    },
 ]
