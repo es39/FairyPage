@@ -3,13 +3,14 @@
 // 3. rendering 
 // 4. hover js 에서 주기
 
-// console.log(fairyMembers);
+// conatiner <- inner <- front-n & back-n 추가
+// id css 추가
 
+console.log(fairyMembers);
 
-
-const upperCardFront= (obj) => {
-  const frontList = document.createElement("div");
-  frontList.className = "member_card1--front";
+// 은선님
+const member_eunseon_f = (obj) => {
+  const frontList = document.querySelector("#member_eunseon_f");
 
   // 앞면 미모티콘 className
   const avatarWrapper = document.createElement("div");
@@ -17,7 +18,7 @@ const upperCardFront= (obj) => {
 
   // 앞면 00요정 className
   const fairyRole = document.createElement("div");
-  fairyRole.className = "member_fairy--role"; 
+  fairyRole.className = "member-card-name"; 
   fairyRole.textContent = obj.membername;
 
   // 미모티콘 붙이기
@@ -31,13 +32,11 @@ const upperCardFront= (obj) => {
 
 }
 
-// const upperCardBack = (obj) => {
+// const member_eunsoen_b = (obj) => {
 // // 뒷면 시작
-//   const backList = document.createElement("div");
-//   backList.className = "member_card1--back";
+//   const backList = document.querySelector("#member_eunsoen_b");
 
-//   const nameEnglish = document.createElement('div');
-//   nameEnglish.className = 'member_Englishname'
+//   const nameEnglish = document.querySelector('h5');
 //   nameEnglish.textContent = obj.englishname;
 
 //   const memberBrief = document.createElement('div');
@@ -56,75 +55,241 @@ const upperCardFront= (obj) => {
 //   return backList;
 // }
 
-// // const upperCardInner = (frontList, backList) => {
-// //   const upperInner = document.createElement("div");
-// //   upperInner.className = "upper--inner";
-  
-// //   upperInner.append(frontList, backList)
-// //   return upperInner;
-// // }
+// 승미님
+const member_seungmi_f= (obj) => {
+  const frontList = document.querySelector("#member_seungmi_f");
 
-// const lowerCard = (obj) => {
-//     const div = document.createElement("div");
-//     div.className = "member_card2";
+  // 앞면 미모티콘 className
+  const avatarWrapper = document.createElement("div");
+  avatarWrapper.className = "member_card--avatar--wrapper";
 
-//     // 앞면 미모티콘 className
-//     const avatarWrapper = document.createElement("div");
-//     avatarWrapper.className = "member_card--avatar--wrapper";
+  // 앞면 00요정 className
+  const fairyRole = document.createElement("div");
+  fairyRole.className = "member-card-name"; 
+  fairyRole.textContent = obj.membername;
 
-//     // 앞면 00요정 className
-//     const fairyRole = document.createElement("div");
-//     fairyRole.className = "member_fairy--role"; 
-//     fairyRole.textContent = obj.membername;
+  // 미모티콘 붙이기
+  const avatarImg = document.createElement('img');
+  avatarImg.src = obj.picture;
+  avatarImg.alt = 'avatar of ' + obj.membername;
+  avatarWrapper.append(avatarImg);
 
-//     // 미모티콘 붙이기
-//     const avatarImg = document.createElement('img');
-//     avatarImg.src = obj.picture;
-//     avatarImg.alt = 'avatar of ' + obj.membername;
-//     avatarWrapper.append(avatarImg);
+ frontList.append(avatarWrapper, fairyRole);
+ return frontList;
 
-//     const nameEnglish = document.createElement('div');
-//     nameEnglish.textContent = obj.englishname;
+}
 
-//     const memberBrief = document.createElement('div');
-//     memberBrief.textContent = obj.wanttobe
+// 규리님
+const member_gyuri_f= (obj) => {
+  const frontList = document.querySelector("#member_gyuri_f");
 
-//     const memberSpecialty = document.createElement('div');
-//     memberSpecialty.textContent = obj.specialty
+  // 앞면 미모티콘 className
+  const avatarWrapper = document.createElement("div");
+  avatarWrapper.className = "member_card--avatar--wrapper";
 
-//     const memberRole = document.createElement('div');
-//     memberRole.textContent = obj.role
+  // 앞면 00요정 className
+  const fairyRole = document.createElement("div");
+  fairyRole.className = "member-card-name"; 
+  fairyRole.textContent = obj.membername;
+
+  // 미모티콘 붙이기
+  const avatarImg = document.createElement('img');
+  avatarImg.src = obj.picture;
+  avatarImg.alt = 'avatar of ' + obj.membername;
+  avatarWrapper.append(avatarImg);
+
+ frontList.append(avatarWrapper, fairyRole);
+ return frontList;
+
+}
+
+// 송민님
+const member_songmin_f= (obj) => {
+  const frontList = document.querySelector("#member_songmin_f");
+
+  // 앞면 미모티콘 className
+  const avatarWrapper = document.createElement("div");
+  avatarWrapper.className = "member_card--avatar--wrapper";
+
+  // 앞면 00요정 className
+  const fairyRole = document.createElement("div");
+  fairyRole.className = "member-card-name"; 
+  fairyRole.textContent = obj.membername;
+
+  // 미모티콘 붙이기
+  const avatarImg = document.createElement('img');
+  avatarImg.src = obj.picture;
+  avatarImg.alt = 'avatar of ' + obj.membername;
+  avatarWrapper.append(avatarImg);
+
+ frontList.append(avatarWrapper, fairyRole);
+ return frontList;
+
+}
+
+// 재훈님
+const member_jaehun_f= (obj) => {
+  const frontList = document.querySelector("#member_jaehun_f");
+
+  // 앞면 미모티콘 className
+  const avatarWrapper = document.createElement("div");
+  avatarWrapper.className = "member_card--avatar--wrapper";
+
+  // 앞면 00요정 className
+  const fairyRole = document.createElement("div");
+  fairyRole.className = "member-card-name"; 
+  fairyRole.textContent = obj.membername;
+
+  // 미모티콘 붙이기
+  const avatarImg = document.createElement('img');
+  avatarImg.src = obj.picture;
+  avatarImg.alt = 'avatar of ' + obj.membername;
+  avatarWrapper.append(avatarImg);
+
+ frontList.append(avatarWrapper, fairyRole);
+ return frontList;
+
+}
+
+// 은수님
+const member_eunsu_f= (obj) => {
+  const frontList = document.querySelector("#member_eunsu_f");
+
+  // 앞면 미모티콘 className
+  const avatarWrapper = document.createElement("div");
+  avatarWrapper.className = "member_card--avatar--wrapper";
+
+  // 앞면 00요정 className
+  const fairyRole = document.createElement("div");
+  fairyRole.className = "member-card-name"; 
+  fairyRole.textContent = obj.membername;
+
+  // 미모티콘 붙이기
+  const avatarImg = document.createElement('img');
+  avatarImg.src = obj.picture;
+  avatarImg.alt = 'avatar of ' + obj.membername;
+  avatarWrapper.append(avatarImg);
+
+ frontList.append(avatarWrapper, fairyRole);
+ return frontList;
+
+}
+
+// 창용님
+const member_changyong_f= (obj) => {
+  const frontList = document.querySelector("#member_changyong_f");
+
+  // 앞면 미모티콘 className
+  const avatarWrapper = document.createElement("div");
+  avatarWrapper.className = "member_card--avatar--wrapper";
+
+  // 앞면 00요정 className
+  const fairyRole = document.createElement("div");
+  fairyRole.className = "member-card-name"; 
+  fairyRole.textContent = obj.membername;
+
+  // 미모티콘 붙이기
+  const avatarImg = document.createElement('img');
+  avatarImg.src = obj.picture;
+  avatarImg.alt = 'avatar of ' + obj.membername;
+  avatarWrapper.append(avatarImg);
+
+ frontList.append(avatarWrapper, fairyRole);
+ return frontList;
+
+}
+
+// 상교님
+const member_sangkyo_f= (obj) => {
+  const frontList = document.querySelector("#member_sangkyo_f");
+
+  // 앞면 미모티콘 className
+  const avatarWrapper = document.createElement("div");
+  avatarWrapper.className = "member_card--avatar--wrapper";
+
+  // 앞면 00요정 className
+  const fairyRole = document.createElement("div");
+  fairyRole.className = "member-card-name"; 
+  fairyRole.textContent = obj.membername;
+
+  // 미모티콘 붙이기
+  const avatarImg = document.createElement('img');
+  avatarImg.src = obj.picture;
+  avatarImg.alt = 'avatar of ' + obj.membername;
+  avatarWrapper.append(avatarImg);
+
+ frontList.append(avatarWrapper, fairyRole);
+ return frontList;
+
+}
 
 
-//     div.append(avatarWrapper, fairyRole);
-//     return div;
-// }
 
-// const upperul = document.querySelector("div.member_card--upper");
-// const lowerul = document.querySelector("div.member_card--lower");
 
-// // upperul.append(upperCard(fairyMembers));
-// // lowerul.append(lowerCard(fairyMembers));
+// ==========================
 
-// const upperrenderFront = (element) => {
-//     for (let i = 0; i < 4; i += 1) {
-//       element.append(upperCardFront(fairyMembers[i]));
-//     }
-// };
+// container <- inner <- f&b
+const upperul1 = document.querySelector("#member_inner_eunseon");
+const upperul2 = document.querySelector("#member_inner_seungmi");
+const upperul3 = document.querySelector("#member_inner_gyuri");
+const upperul4 = document.querySelector("#member_inner_songmin");
+const upperul5 = document.querySelector("#member_inner_jaehun");
+const upperul6 = document.querySelector("#member_inner_eunsu");
+const upperul7 = document.querySelector("#member_inner_changyong");
+const upperul8 = document.querySelector("#member_inner_sangkyo");
 
-// const upperrenderBack = (element) => {
-//   for (let i = 0; i < 4; i += 1) {
-//     element.append(upperCardBack(fairyMembers[i]));
-//   }
-// };
+//은선님
+const member_eunseon = (element) => {
+  // element.append(member_eunseon_b(fairyMembers[0]));
+  element.append(member_eunseon_f(fairyMembers[0]));
+};
+member_eunseon(upperul1);
 
-// const lowerrender = (element) => {
-//     for (let i = 4; i < 8; i += 1) {
-//       element.append(lowerCard(fairyMembers[i]));
-//     }
-// };
+//승미님
+const member_seungmi = (element) => {
+  element.append(member_seungmi_f(fairyMembers[1]));
+  // element.append(member_seungmi_b(fairyMembers[1]));
+};
+member_seungmi(upperul2);
 
-// upperrenderFront(upperul);
-// upperrenderBack(upperul);
-// lowerrender(lowerul); 
+//규리님
+const member_gyuri = (element) => {
+  element.append(member_gyuri_f(fairyMembers[2]));
+  // element.append(upperCardBack(fairyMembers[2]));
+};
+member_gyuri(upperul3);
 
+//송민님
+const member_songmin = (element) => {
+  element.append(member_songmin_f(fairyMembers[3]));
+  // element.append(upperCardBack(fairyMembers[3]));
+};
+member_songmin(upperul4);
+
+//재훈님
+const member_jaehun = (element) => {
+  element.append(member_jaehun_f(fairyMembers[4]));
+  // element.append(upperCardBack(fairyMembers[4]));
+};
+member_jaehun(upperul5);
+
+//은수님
+const member_eunsu = (element) => {
+  element.append(member_eunsu_f(fairyMembers[5]));
+  // element.append(upperCardBack(fairyMembers[5]));
+};
+member_eunsu(upperul6);
+
+//창용님
+const member_changyong = (element) => {
+  element.append(member_changyong_f(fairyMembers[6]));
+  // element.append(upperCardBack(fairyMembers[6]));
+};
+member_changyong(upperul7);
+
+//상교님
+const member_sangkyo = (element) => {
+  element.append(member_sangkyo_f(fairyMembers[7]));
+  // element.append(upperCardBack(fairyMembers[7]));
+};
+member_sangkyo(upperul8);

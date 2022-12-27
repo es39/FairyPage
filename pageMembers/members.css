@@ -1,77 +1,238 @@
 * {
-   margin: 0;
-   padding: 0;     
-   box-sizing: border-box; 
+  margin: 0;
+  padding: 0;     
+  box-sizing: border-box; 
 }
 
 #member {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ height: 100vh;
 }
 
 .member-card-upper {
-  display: flex;
-  justify-content: center;
-  width: 800px;
+ display: flex;
+ justify-content: center;
+ width: 800px;
 }
 
 .member-card-container {
-  background-color: transparent;
-  height: 200px;
-  perspective: 1000px;
-  display: flex;
-  width: calc(100% / 4);
+ border-radius: 20px;
+ background-color: transparent;
+ height: 200px;
+ perspective: 1000px;
+ display: flex;
+ width: calc(100% / 4);
 }
 
 .member-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
+border-radius: 20px;
+ position: relative;
+ width: 100%;
+ height: 100%;
+ text-align: center;
+ transition: transform 0.6s;
+ transform-style: preserve-3d;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ backface-visibility: hidden;
+ -moz-backface-visibility: hidden;
 }
 
 .member-card-container:focus {
-    outline: 0;
+   outline: 0;
 }
 
 /* .member-card-container:hover .member-card-inner, 
 .member-card-container:hover .member-card-inner {
-  transform: rotateY(180deg);
+ transform: rotateY(180deg);
 } */
 
 .member-card-container:hover .member-card-inner, 
 .member-card-container:focus .member-card-inner{
-  transform: rotateY(180deg);
+ transform: rotateY(180deg);
 }
 
 .member-card-front,
 .member-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+ position: absolute;
+ width: 200px;
+ height: 200px;
+ border-radius: 20px;
 }
 
-.member-card-front {
-  background: linear-gradient(to left, #a8b7f6, #6fb1fc);
+.member-card-back {
+  padding: 5px;
+}
+/* 카드 앞면 CSS */
+
+#member_eunseon_f {
+ /* background: linear-gradient(to left, #a8b7f6, #6fb1fc); */
+ background: #ffb3cd;
+ color: black;
+ z-index: 2;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+#member_seungmi_f {
+ /* background: linear-gradient(to left, #a8b7f6, #6fb1fc); */
+ background: #9a9d9f;
+ color: black;
+ z-index: 2;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+#member_gyuri_f {
+ /* background: linear-gradient(to left, #a8b7f6, #6fb1fc); */
+ background: #1addb6;
+ color: black;
+ z-index: 2;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+#member_songmin_f {
+ /* background: linear-gradient(to left, #a8b7f6, #6fb1fc); */
+ background: #ffeaa7;
+ color: black;
+ z-index: 2;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+#member_jaehun_f {
+ background: #ff7675;
+ color: black;
+ z-index: 2;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+#member_eunsu_f {
+  background: #dfe6e9;
   color: black;
   z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+ }
+
+#member_changyong_f {
+  background: #74b9ff;
+  color: black;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+ #member_sangkyo_f {
+  background: #fab1a0;
+  color: black;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+ /* 카드 뒷면 CSS */
+
+#member_eunseon_b {
+ background: #e6559b;
+ color: black;
+ transform: rotateY(180deg);
+ z-index: 1;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
 }
 
-.member-card-back {
-  background: linear-gradient(to right, #4364f7, #6fb1fc);
-  color: white;
+#member_seungmi_b {
+  background: #78898e;
+  color: black;
+  transform: rotateY(180deg);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+#member_gyuri_b {
+  background: #00b894;
+  color: black;
+  transform: rotateY(180deg);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+ #member_songmin_b {
+  background: #fdcb6e;
+  color: black;
+  transform: rotateY(180deg);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+ #member_jaehun_b {
+ background: #f83939;
+ color: black;
+ transform: rotateY(180deg);
+ z-index: 1;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+#member_eunsu_b {
+  background: #b2bec3;
+  color: black;
+  transform: rotateY(180deg);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+ #member_changyong_b {
+  background: #0984e3;
+  color: black;
+  transform: rotateY(180deg);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+
+ #member_sangkyo_b {
+  background: #e17055;
+  color: black;
   transform: rotateY(180deg);
   z-index: 1;
   display: flex;
@@ -80,113 +241,180 @@
   align-items: center;
 }
 
-
 .member-card--avatar--wrapper {
-  border: 1px 1px 1px solid black;
-  margin: 30px;
+ border: 1px 1px 1px solid black;
+ margin-bottom: 10px;
 }
 
 img {
-  width: 100px;
+ width: 130px;
 }
 
 .member_Englishname {
-  text-align: left;
+ text-align: left;
 }
 
 
-.member_icon--wrapper {
-  display: flex;
-  width: 70%;
-  justify-content: space-around;
+/* .member_icon--wrapper {
+ border: 1px black solid;
+ display: flex;
+ width: 70%;
+ justify-content: space-around;
+} */
+
+.member-quote {
+  font-family: arial;
+  margin: 100px;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa,
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+}
+.member-quote:hover {
+  transform: scale(2);
+  transition-duration: 0.5s;
+
 }
 
+.member-quote3
+{  
+  margin: 80px;
+  font-weight: bold;
+  position:relative;
+  padding:20px 20px 20px 30px;
+  color:#c9c9c9;
+  text-decoration:none;
+  font-size:15px;
+  font-family:sans-serif;
+  letter-spacing:10px;
+  text-transform:uppercase;
+}
+.member-quote3:before
+{
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:2px;
+  background:#66BB6A;
+  transform-style:linear;
+  transition-property:height,width;
+  transition-delay:0.5s,1s;
+  transition-duration:0.5s;
+}
+.member-quote3:hover:before
+{
+  transition-property:width,height;
+  width:15px;
+  height:100%;
+}
+.member-quote3:after
+{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  width:100%;
+  height:100%;
+  background:#637881;
+  transform:scaleX(0);
+  transition:0.5s;
+  transition-delay:0s;
+  transform-origin:left;
+  z-index:-1;
+}
+.member-quote3:hover:after
+{
+  transform:scaleX(1);
+  transition-delay:1.5s;
+}
 
 /* main {
-   height: 100vh;
-   width: 100%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   flex-wrap : wrap;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap : wrap;
 } */
 
 /* .member_card--upper {
-  list-style:none;
-  display: flex;
-  justify-content: center;
+ list-style:none;
+ display: flex;
+ justify-content: center;
 } */
 
 /* li {
-  border: 2px solid rgb(255, 64, 64);
+ border: 2px solid rgb(255, 64, 64);
 } */
 
 /* ul > li {
-  border-radius: 10px;
+ border-radius: 10px;
 } */
 
 /* #member {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
 }
 
 .member_team--container {
-  max-width: 1350px;
-  min-width: 1350px;
-  height: 300px;
-  border: 2px solid #191de3;
+ max-width: 1350px;
+ min-width: 1350px;
+ height: 300px;
+ border: 2px solid #191de3;
 }
 
 .member_member--card--container {
-  max-width: 1350px;
-  min-width: 1350px;
-  height: 550px;
-  border: 2px solid rgb(255, 64, 64);
-  padding: 0.5em;
-  background-color: transparent;
-  perspective: 1000px;
+ max-width: 1350px;
+ min-width: 1350px;
+ height: 550px;
+ border: 2px solid rgb(255, 64, 64);
+ padding: 0.5em;
+ background-color: transparent;
+ perspective: 1000px;
 }
 
 .member_member--card--container:focus {
-  outline: 0;
+ outline: 0;
 }
 
 .member_card--upper, .member_card--lower {
-  height: calc(100% / 2);
-  border: 2px solid rgb(255, 64, 64);
+ height: calc(100% / 2);
+ border: 2px solid rgb(255, 64, 64);
 }
 
 .member_card1--front {
-  width: 50%
+ width: 50%
 }
 
 
 .member_card2 {
-  border: 2px solid rgb(255, 64, 64);
-  width: calc(100% / 4);
-  height: 100%;
-  background-color: transparent;
-  cursor: pointer;
-  position: relative;
-  transition: transform 0.5s;
-  backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  transform-style: preserve-3d;
+ border: 2px solid rgb(255, 64, 64);
+ width: calc(100% / 4);
+ height: 100%;
+ background-color: transparent;
+ cursor: pointer;
+ position: relative;
+ transition: transform 0.5s;
+ backface-visibility: hidden;
+ -moz-backface-visibility: hidden;
+ transform-style: preserve-3d;
 }
 
 .member_card1--front, 
 .member_card2 {
-  border: 2px solid rgb(255, 64, 64);
-  width: calc(100% / 4);
-  height: 100%;
-  background-color: transparent;
-  cursor: pointer;
-  position: relative;
-  transition: transform 0.5s;
-  backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  transform-style: preserve-3d;
+ border: 2px solid rgb(255, 64, 64);
+ width: calc(100% / 4);
+ height: 100%;
+ background-color: transparent;
+ cursor: pointer;
+ position: relative;
+ transition: transform 0.5s;
+ backface-visibility: hidden;
+ -moz-backface-visibility: hidden;
+ transform-style: preserve-3d;
 }
 
 .member_card1--front:hover,
@@ -195,21 +423,21 @@ img {
 .member_card1--back:focus,
 .member_card2:focus, 
 .member_card2:hover {
-  transform: rotateY(180deg);
+ transform: rotateY(180deg);
 }
 
 div .member_card1--front,
 div .member_card1--back  {
-  position: absolute;
-  width: 100%;
-  height: 100%
+ position: absolute;
+ width: 100%;
+ height: 100%
 }
 
 div.member_card1--front {
-  background: linear-gradient(to left, grey, pink);
-  z-index: 2;
+ background: linear-gradient(to left, grey, pink);
+ z-index: 2;
 }
 div.member_card1--back {
-  background-color: linear-gradient(to right, grey, pink);
-  z-index: 1;
+ background-color: linear-gradient(to right, grey, pink);
+ z-index: 1;
 } */
