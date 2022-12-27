@@ -18,9 +18,10 @@
   display: flex;
   justify-content: space-between;
   position: fixed;
+  z-index: 100;
 }
 
-.main_logo{
+.main_logo > a > img{
   width: 70px;
   height: 70px;
   border-radius: 30%;
@@ -177,5 +178,11 @@
   color:  #AFCB3D;
   transition: 1.5s;
   opacity: 1;
+}
+
+.ball {
+  position: absolute;
+  border-radius: 100%;
+  opacity: 0.7;
 }
 
